@@ -92,19 +92,7 @@ int main(){
     
 // }
 
-// #include<stdio.h>
-// int main(){
-//     int n;
-//     printf("enter number:");
-//     scanf("%d",&n);
 
-//     int i=1,sum=0;
-//     do{
-//         sum=sum+i;
-//         i++;
-//     }while(i<=n);
-//     printf("sum is %d",sum);
-// }
 
 // #include<stdio.h>
 // int main(){
@@ -162,12 +150,26 @@ int main(){
 
 //multiplication 
 
+// #include<stdio.h>
+// int main(){
+//     int n=2,multi;
+//     for(int i=10; i>=1; i--){
+//         multi=n*i;
+//         printf("%dX%d=%d\n",n,i,multi);
+
+//     }
+// }
+
 #include<stdio.h>
 int main(){
-    int n=2,multi;
-    for(int i=10; i>=1; i--){
-        multi=n*i;
-        printf("%dX%d=%d\n",n,i,multi);
+    int n;
+    printf("enter number:");
+    scanf("%d",&n);
 
-    }
+    int i=1,sum=0;
+    do{
+        sum=sum+i;
+        i++;
+    }while(i<=n);
+    printf("sum is %d",sum);
 }
