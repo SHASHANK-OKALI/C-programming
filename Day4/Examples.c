@@ -1,55 +1,70 @@
-#include<stdio.h>
+// #include<stdio.h>
 
-float convt(float celsius);
+// float convt(float celsius);
 
-float convt(float celsius){
+// float convt(float celsius){
    
-    float far=celsius*(9.0/5.0)+32;
-    return far;
-}
+//     float far=celsius*(9.0/5.0)+32;
+//     return far;
+// }
 
-int main(){
-    float celsius;
-    printf("Enter celsius:");
-    scanf("%f",&celsius);
-    printf(" The celsius of %f  farhanite is %f",celsius,convt(celsius));
+// int main(){
+//     float celsius;
+//     printf("Enter celsius:");
+//     scanf("%f",&celsius);
+//     printf(" The celsius of %f  farhanite is %f",celsius,convt(celsius));
     
-}
+// }
+
+// #include<stdio.h>
+
+// float percentage(float sci,float math,float sans);
+
+// float percentage(float sci,float math,float sans){
+    
+//     float total=sci+math+sans;
+//     float percent=(total/300)*100;
+//     return percent;
+    
+    
+// }
+
+// int main(){
+//     float sci=90,math=75,sans=65;
+//     printf("The percentage of student is %.2f%%\n",percentage(sci,math,sans));
+// }
+
+// #include<stdio.h>
+
+// float temp(float a);
+
+
+// float temp(float a){
+//    if(a>30){
+//     printf("%f is hot degree",a);
+//    } else{
+//     printf("%f is cold degree",a);
+//    }
+// }
+
+// int main(){
+//     float a;
+//     printf("Enter temp:");
+//     scanf("%f",&a);
+//     temp(a);
+// }
 
 #include<stdio.h>
-
-float percentage(float sci,float math,float sans);
-
-float percentage(float sci,float math,float sans){
-    
-    float total=sci+math+sans;
-    float percent=(total/300)*100;
-    return percent;
-    
-    
-}
-
-int main(){
-    float sci=90,math=75,sans=65;
-    printf("The percentage of student is %.2f%%\n",percentage(sci,math,sans));
-}
-
-#include<stdio.h>
-
-float temp(float a);
-
-
-float temp(float a){
-   if(a>30){
-    printf("%f is hot degree",a);
-   } else{
-    printf("%f is cold degree",a);
-   }
-}
-
-int main(){
-    float a;
-    printf("Enter temp:");
-    scanf("%f",&a);
-    temp(a);
+void main(){
+    int i,n,t1=0,t2=1,nextterm;
+    printf("Enter number of terms\n");
+    scanf("%d",&n);
+    printf("Fibonacci series\n");
+    for(int i=1; i<=n; ++i)
+    {
+        printf("%d\n",t1);
+        nextterm=t1+t2;
+        t1=t2;
+        t2=nextterm;
+    }
 }
