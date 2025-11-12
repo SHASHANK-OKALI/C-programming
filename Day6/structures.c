@@ -78,30 +78,152 @@
 
 //
 
-#include<stdio.h>
-struct vector
-{
-  int x;
-  int y;
-};
+// #include<stdio.h>
+// struct vector
+// {
+//   int x;
+//   int y;
+// };
 
-void calsum(struct vector v1,struct vector v2,struct vector sum);
+// void calsum(struct vector v1,struct vector v2,struct vector sum);
+
+// int main(){
+//     struct vector v1 = {5,10};
+//     struct vector v2 = {3,10};
+//     struct vector sum = {0};
+
+//     calsum(v1,v2,sum);
+
+//     return 0;
+
+
+// }
+
+// void calsum(struct vector v1,struct vector v2,struct vector sum){
+//     sum.x=v1.x+v2.x;
+//     sum.y=v1.y+v2.y;
+//     printf("sum of x is :%d\n",sum.x);
+//     printf("sum of y is : %d\n",sum.y);
+// }
+
+
+#include <stdio.h>
 
 int main(){
-    struct vector v1 = {5,10};
-    struct vector v2 = {3,10};
-    struct vector sum = {0};
+    FILE*fptr;
+    fptr=fopen("NewTet.txt","r");
+    if(fptr==NULL)
+    {
+        printf("File does not exist\n");
 
-    calsum(v1,v2,sum);
-
+    }else
+    {
+        fclose(fptr);
+        printf("code is working");
+    }
     return 0;
-
-
 }
 
-void calsum(struct vector v1,struct vector v2,struct vector sum){
-    sum.x=v1.x+v2.x;
-    sum.y=v1.y+v2.y;
-    printf("sum of x is :%d\n",sum.x);
-    printf("sum of y is : %d\n",sum.y);
+//to read existing input
+#include <stdio.h>
+
+int main(){
+    FILE*fptr;
+    fptr=fopen("NewTest.txt","r");
+    
+    int ch;
+    fscanf(fptr,"%d",&ch);
+    printf("character=%d\n",ch);
+    fscanf(fptr,"%d",&ch);
+    printf("character=%d\n",ch);
+    fscanf(fptr,"%d",&ch);
+    printf("character=%d\n",ch);
+
+    fclose(fptr);
+    return 0;
+}
+
+
+//to change existing input
+#include <stdio.h>
+
+int main(){
+    FILE*fptr;
+    fptr=fopen("NewTest.txt","w");
+
+    fprintf(fptr,"%c",'S');
+    fprintf(fptr,"%c",'H');
+    fprintf(fptr,"%c",'A');
+    fprintf(fptr,"%c",'S');
+    fprintf(fptr,"%c",'H');
+    fprintf(fptr,"%c",'A');
+    fprintf(fptr,"%c",'N');
+    fprintf(fptr,"%c",'K');
+    fclose(fptr);
+    return 0;
+}
+
+//to add to existing file
+
+#include <stdio.h>
+
+int main(){
+    FILE*fptr;
+    fptr=fopen("NewTest.txt","a");
+
+    fprintf(fptr,"%c",'S');
+    fprintf(fptr,"%c",'H');
+    fprintf(fptr,"%c",'A');
+    fprintf(fptr,"%c",'S');
+    fprintf(fptr,"%c",'H');
+    fprintf(fptr,"%c",'A');
+    fprintf(fptr,"%c",'N');
+    fprintf(fptr,"%c",'K');
+    fclose(fptr);
+    return 0;
+}
+
+//reading data using fgetc
+#include <stdio.h>
+
+int main(){
+    FILE*fptr;
+    fptr=fopen("NewTest.txt","r");
+    
+    int ch;
+    
+    printf("character=%c\n",fgetc(fptr));
+    printf("character=%c\n",fgetc(fptr));
+    printf("character=%c\n",fgetc(fptr));
+    printf("character=%c\n",fgetc(fptr));
+    printf("character=%c\n",fgetc(fptr));
+    printf("character=%c\n",fgetc(fptr));
+    printf("character=%c\n",fgetc(fptr));
+    printf("character=%c\n",fgetc(fptr));
+   
+   
+
+    fclose(fptr);
+    return 0;
+}
+
+//EOF PROGRAM
+
+#include <stdio.h>
+
+int main(){
+    FILE*fptr;
+    fptr=fopen("NewTest.txt","r");
+
+    char ch;
+
+    ch=fgetc(fptr);
+    while(ch!= EOF){
+        printf("%c",ch);
+        ch=fgetc(fptr);
+    }
+    printf("\n");
+
+    fclose(fptr);
+    return 0;
 }
