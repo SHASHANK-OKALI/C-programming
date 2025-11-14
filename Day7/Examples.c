@@ -33,22 +33,22 @@
 //smart traffic controller
 //create program that takes
 
-#include<stdio.h>
-int main(){
-  int cars,time,signal;
-  printf("Enter three integer inputs:");
-  scanf("%d%d%d",&cars,&time,&signal);
+// #include<stdio.h>
+// int main(){
+//   int cars,time,signal;
+//   printf("Enter three integer inputs:");
+//   scanf("%d%d%d",&cars,&time,&signal);
 
-  if(signal==1 && cars<=5){
-    printf("Go fast");
-  }else if(signal==1 && cars>5){
-    printf("Move slowly");
-  }else if(signal==0 && time<10){
-    printf("wait");
-  }else if(signal==0 && time>=10){
-    printf("ready");
-  }else{
-    printf("signal error");
-  }
-  return 0;
-}
+//   if(signal==1 && cars<=5){
+//     printf("Go fast");
+//   }else if(signal==1 && cars>5){
+//     printf("Move slowly");
+//   }else if(signal==0 && time<10){
+//     printf("wait");
+//   }else if(signal==0 && time>=10){
+//     printf("ready");
+//   }else{
+//     printf("signal error");
+//   }
+//   return 0;
+// }
