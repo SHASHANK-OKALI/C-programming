@@ -16,7 +16,7 @@
 
 //Linear search and Binary search
 
-#include<stdio.h>
+/*#include<stdio.h>
 int main(){
   int n,i,key,choice;
   printf("Enter number of elements:");
@@ -62,4 +62,34 @@ else if(choice==2){
     printf("Invalid choice!\n");
   }
   return 0;
+}*/
+
+#include <stdio.h>
+
+int digitSum(int n) {
+    int sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    int result = n;
+
+    while (result > 9) {
+        result = digitSum(result);
+    }
+
+    if (result == 1)
+        printf("%d is a MAGIC number!\n", n);
+    else
+        printf("%d is NOT a magic number.\n", n);
+
+    return 0;
 }
