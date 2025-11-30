@@ -64,7 +64,7 @@ else if(choice==2){
   return 0;
 }*/
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int digitSum(int n) {
     int sum = 0;
@@ -92,4 +92,48 @@ int main() {
         printf("%d is NOT a magic number.\n", n);
 
     return 0;
+}*/
+
+#include <stdio.h>
+
+struct Employee {
+    int id;
+    char name[50];
+    float salary;
+};
+
+int main() {
+    int n, i, maxIndex = 0;
+
+    printf("Enter number of employees: ");
+    scanf("%d", &n);
+
+    struct Employee emp[n];
+
+    for (i = 0; i < n; i++) {
+        printf("\nEnter details of employee %d:\n", i + 1);
+        printf("ID: ");
+        scanf("%d", &emp[i].id);
+
+        printf("Name: ");
+        scanf("%s", emp[i].name);
+
+        printf("Salary: ");
+        scanf("%f", &emp[i].salary);
+    }
+
+    // Find employee with highest salary
+    for (i = 1; i < n; i++) {
+        if (emp[i].salary > emp[maxIndex].salary) {
+            maxIndex = i;
+        }
+    }
+
+    printf("\nEmployee with Highest Salary:\n");
+    printf("ID: %d\n", emp[maxIndex].id);
+    printf("Name: %s\n", emp[maxIndex].name);
+    printf("Salary: %.2f\n", emp[maxIndex].salary);
+
+    return 0;
 }
+
