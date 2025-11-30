@@ -94,7 +94,7 @@ int main() {
     return 0;
 }*/
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 struct Employee {
     int id;
@@ -135,5 +135,85 @@ int main() {
     printf("Salary: %.2f\n", emp[maxIndex].salary);
 
     return 0;
+}*/
+
+#include <stdio.h>
+#include <string.h>
+
+struct Book {
+    int id;
+    char title[100];
+    char author[50];
+};
+
+int main() {
+    struct Book library[100];
+    int choice, count = 0;
+
+    while (1) {
+        printf("\n===== Library Menu =====\n");
+        printf("1. Add Book\n");
+        printf("2. Search Book by ID\n");
+        printf("3. Display All Books\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1) {
+            printf("\nEnter Book ID: ");
+            scanf("%d", &library[count].id);
+
+            printf("Enter Book Title: ");
+            scanf("%s", library[count].title);
+
+            printf("Enter Author Name: ");
+            scanf("%s", library[count].author);
+
+            count++;
+            printf("Book Added Successfully!\n");
+        }
+
+        else if (choice == 2) {
+            int id, found = 0;
+            printf("\nEnter Book ID to search: ");
+            scanf("%d", &id);
+
+            for (int i = 0; i < count; i++) {
+                if (library[i].id == id) {
+                    printf("\nBook Found:\n");
+                    printf("ID: %d\n", library[i].id);
+                    printf("Title: %s\n", library[i].title);
+                    printf("Author: %s\n", library[i].author);
+                    found = 1;
+                    break;
+                }
+            }
+            if (!found) {
+                printf("Book Not Found!\n");
+            }
+        }
+
+        else if (choice == 3) {
+            printf("\nAll Books in Library:\n");
+            for (int i = 0; i < count; i++) {
+                printf("\nBook %d:\n", i + 1);
+                printf("ID: %d\n", library[i].id);
+                printf("Title: %s\n", library[i].title);
+                printf("Author: %s\n", library[i].author);
+            }
+        }
+
+        else if (choice == 4) {
+            printf("Exiting...\n");
+            break;
+        }
+
+        else {
+            printf("Invalid Choice! Try again.\n");
+        }
+    }
+
+    return 0;
 }
+
 
