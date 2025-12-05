@@ -343,7 +343,7 @@ int main() {
 // }
     
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main() {
     int arr[50], n, i, j, temp;
@@ -374,6 +374,35 @@ int main() {
     printf("\n");
 
     return 0;
+}*/
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100], temp;
+    int i, j, len;
+
+    printf("Enter a string: ");
+    scanf("%s", str);   // reads a single word
+
+    len = strlen(str);
+
+    // Bubble Sort on characters
+    for (i = 0; i < len - 1; i++) {
+        for (j = 0; j < len - i - 1; j++) {
+            if (str[j] > str[j + 1]) {   // alphabetical order
+                temp = str[j];
+                str[j] = str[j + 1];
+                str[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted string: %s\n", str);
+
+    return 0;
 }
+
 
 
