@@ -498,7 +498,7 @@ int main() {
     return 0;
 }*/
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main() {
     int arr[100], n, k, i, j, temp;
@@ -533,7 +533,24 @@ int main() {
     printf("The %d-th smallest element is: %d\n", k, arr[k - 1]);
 
     return 0;
+}*/
+
+
+#include <stdio.h>
+
+int sum(int a, int b) {
+    return a + b;
 }
+
+int main() {
+    int x, y;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &x, &y);
+
+    printf("Sum = %d\n", sum(x, y));
+    return 0;
+}
+
 
 
 
