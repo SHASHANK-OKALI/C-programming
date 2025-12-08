@@ -551,7 +551,7 @@ int main() {
     return 0;
 }*/
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int isEven(int n) {
     return n % 2 == 0;
@@ -568,8 +568,34 @@ int main() {
         printf("%d is Odd\n", n);
 
     return 0;
+}*/
+
+//fibonacci series
+
+#include <stdio.h>
+
+void fibonacci(int n) {
+    int a = 0, b = 1, c;
+
+    printf("Fibonacci Series: ");
+
+    for(int i = 1; i <= n; i++) {
+        printf("%d ", a);
+        c = a + b;
+        a = b;
+        b = c;
+    }
 }
 
+int main() {
+    int n;
+    printf("Enter how many terms: ");
+    scanf("%d", &n);
+
+    fibonacci(n);
+
+    return 0;
+}
 
 
 
