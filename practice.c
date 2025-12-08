@@ -572,7 +572,7 @@ int main() {
 
 //fibonacci series
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 void fibonacci(int n) {
     int a = 0, b = 1, c;
@@ -595,7 +595,33 @@ int main() {
     fibonacci(n);
 
     return 0;
+}*/
+
+#include <stdio.h>
+
+int isPrime(int n) {
+    if(n < 2) return 0;
+
+    for(int i = 2; i * i <= n; i++) {
+        if(n % i == 0)
+            return 0;
+    }
+    return 1;
 }
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if(isPrime(n))
+        printf("%d is Prime\n", n);
+    else
+        printf("%d is Not Prime\n", n);
+
+    return 0;
+}
+
 
 
 
