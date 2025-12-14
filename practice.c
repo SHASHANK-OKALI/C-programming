@@ -597,7 +597,7 @@ int main() {
     return 0;
 }*/
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int isPrime(int n) {
     if(n < 2) return 0;
@@ -618,6 +618,86 @@ int main() {
         printf("%d is Prime\n", n);
     else
         printf("%d is Not Prime\n", n);
+
+    return 0;
+}*/
+
+//merge sort
+
+// #include<stdio.h>
+
+// void merge(int arr[],int left,int mid,int right)
+
+// {
+//     int i=left,j=mid+1,k=0;
+//     int temp[50];
+//     while(i<=mid && j<=right)
+//     {
+//         if(arr[i]<arr[j])
+//         temp[k++]=arr[i++];
+//         else
+//         temp[k++]=arr[j++];
+//     }
+//     while(i<=mid)
+//     temp[k++]=arr[i++];
+//     while(j<=right)
+//     temp[k++]=arr[j++];
+//     for(i=left,k=0,j<=right;i++,k++;)
+//     arr[i]=temp[k];
+// }
+// void mergesort(int arr[],int left,int right)
+// {
+//     if(left<right)
+//     {
+//         int mid=(left+right)/2;
+//         mergesort(arr,left,mid);
+//         mergesort(arr,mid+1,right);
+//         merge(arr,left,mid,right);
+//     }
+// }
+// int main()
+// {
+//     int arr[50],n;
+//     printf("Enter number of elements:");
+//     scanf("%d",&n);
+//     printf("Enter %d elements :\n",n);
+//     for(int i=0; i<n; i++)
+//     scanf("%d",&arr[i]);
+//     mergesort(arr,0,n-1);
+//     printf("Sorted array:");
+//     for(int i=0; i<n; i++)
+//     printf("%d",arr[i]);
+    
+// }
+
+
+#include <stdio.h>
+
+int main() {
+    int arr[10], n, key, i, found = 0;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter element to search: ");
+    scanf("%d", &key);
+
+    for(i = 0; i < n; i++) {
+        if(arr[i] == key) {
+            printf("Element found at position %d", i + 1);
+            found = 1;
+            break;
+        }
+    }
+
+    if(found == 0) {
+        printf("Element not found");
+    }
 
     return 0;
 }
