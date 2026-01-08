@@ -760,7 +760,7 @@ int main() {
 
 //merge sort
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 // Function to merge two halves
 void merge(int arr[], int low, int mid, int high) {
@@ -813,7 +813,210 @@ int main() {
     }
 
     return 0;
+}*/
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// struct node {
+//     int data;
+//     struct node *prev;
+//     struct node *next;
+// };
+
+// struct node *head = NULL;
+// void insert_begin(int value) {
+//     struct node *newnode;
+//     newnode = (struct node *)malloc(sizeof(struct node));
+
+//     newnode->data = value;
+//     newnode->prev = NULL;
+//     newnode->next = head;
+
+//     if (head != NULL)
+//         head->prev = newnode;
+
+//     head = newnode;
+// }
+// void insert_end(int value) {
+//     struct node *newnode, *temp;
+//     newnode = (struct node *)malloc(sizeof(struct node));
+
+//     newnode->data = value;
+//     newnode->next = NULL;
+
+//     if (head == NULL) {
+//         newnode->prev = NULL;
+//         head = newnode;
+//         return;
+//     }
+
+//     temp = head;
+//     while (temp->next != NULL)
+//         temp = temp->next;
+
+//     temp->next = newnode;
+//     newnode->prev = temp;
+// }
+// void delete_begin() {
+//     struct node *temp;
+
+//     if (head == NULL) {
+//         printf("List is empty\n");
+//         return;
+//     }
+
+//     temp = head;
+//     head = head->next;
+
+//     if (head != NULL)
+//         head->prev = NULL;
+
+//     free(temp);
+// }
+// void delete_end() {
+//     struct node *temp;
+
+//     if (head == NULL) {
+//         printf("List is empty\n");
+//         return;
+//     }
+
+//     temp = head;
+//     while (temp->next != NULL)
+//         temp = temp->next;
+
+//     if (temp->prev != NULL)
+//         temp->prev->next = NULL;
+//     else
+//         head = NULL;
+
+//     free(temp);
+// }
+// void display() {
+//     struct node *temp;
+
+//     if (head == NULL) {
+//         printf("List is empty\n");
+//         return;
+//     }
+
+//     temp = head;
+//     printf("Doubly Linked List: ");
+//     while (temp != NULL) {
+//         printf("%d ", temp->data);
+//         temp = temp->next;
+//     }
+//     printf("\n");
+// }
+// int main() {
+//     insert_begin(10);
+//     insert_begin(20);
+//     insert_end(30);
+//     insert_end(40);
+
+//     display();
+
+//     delete_begin();
+//     display();
+
+//     delete_end();
+//     display();
+
+//     return 0;
+// }
+
+
+//stack operations using linked list
+
+#include <stdio.h>
+#include <stdlib.h>
+// Define a structure for a node in the stack
+struct Node {
+int data;
+struct Node* next;
+};
+// Function to create a new node
+struct Node* createNode(int value) {
+struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+newNode->data = value;
+newNode->next = NULL;
+return newNode;
 }
+// Function to push an element onto the stack
+struct Node* push(struct Node* top, int value) {
+struct Node* newNode = createNode(value);
+
+newNode->next = top;
+return newNode;
+}
+// Function to pop an element from the stack
+struct Node* pop(struct Node* top) {
+if (top == NULL) {
+printf("Stack underflow. Cannot pop from an empty stack.\n");
+return NULL;
+}
+struct Node* temp = top;
+top = top->next;
+free(temp);
+return top;
+}
+// Function to display the elements in the stack
+void display(struct Node* top) {
+if (top == NULL) {
+printf("Stack is empty.\n");
+return;
+}
+printf("Stack elements: ");
+while (top != NULL) {
+printf("%d ", top->data);
+top = top->next;
+}
+printf("\n");
+}
+int main() {
+struct Node* top = NULL;
+int choice, value;
+while (1) {
+printf("\nMenu:\n");
+printf("1. Push\n");
+printf("2. Pop\n");
+printf("3. Display\n");
+printf("4. Exit\n");
+printf("Enter your choice: ");
+
+scanf("%d", &choice);
+switch (choice) {
+case 1:
+printf("Enter the value to push onto the stack: ");
+scanf("%d", &value);
+top = push(top, value);
+printf("%d pushed onto the stack.\n", value);
+break;
+case 2:
+top = pop(top);
+break;
+case 3:
+display(top);
+break;
+case 4:
+printf("Exiting the program.\n");
+// Free memory for remaining nodes in the stack
+while (top != NULL) {
+struct Node* temp = top;
+top = top->next;
+free(temp);
+}
+return 0;
+default:
+printf("Invalid choice. Please enter a valid option.\n");
+}
+}
+return 0;
+}
+
+
+
+
 
 
 
