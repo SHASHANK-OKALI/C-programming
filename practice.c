@@ -1012,15 +1012,28 @@ int main() {
 
 //factorial of a number
 
+// #include <stdio.h>
+// int main() {
+//     int n, fact = 1;
+//     scanf("%d", &n);
+//     for(int i = 1; i <= n; i++)
+//         fact *= i;
+//     printf("Factorial = %d", fact);
+//     return 0;
+// }
+
+//power of a number
+
 #include <stdio.h>
 int main() {
-    int n, fact = 1;
-    scanf("%d", &n);
-    for(int i = 1; i <= n; i++)
-        fact *= i;
-    printf("Factorial = %d", fact);
+    int base, exp, result = 1;
+    scanf("%d %d", &base, &exp);
+    for(int i = 1; i <= exp; i++)
+        result *= base;
+    printf("Result = %d", result);
     return 0;
 }
+
 
 
 
