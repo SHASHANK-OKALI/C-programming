@@ -1024,13 +1024,28 @@ int main() {
 
 //power of a number
 
+// #include <stdio.h>
+// int main() {
+//     int base, exp, result = 1;
+//     scanf("%d %d", &base, &exp);
+//     for(int i = 1; i <= exp; i++)
+//         result *= base;
+//     printf("Result = %d", result);
+//     return 0;
+// }
+
+
+//Reverse of a number
+
 #include <stdio.h>
 int main() {
-    int base, exp, result = 1;
-    scanf("%d %d", &base, &exp);
-    for(int i = 1; i <= exp; i++)
-        result *= base;
-    printf("Result = %d", result);
+    int n, rev = 0;
+    scanf("%d", &n);
+    while(n != 0) {
+        rev = rev * 10 + n % 10;
+        n /= 10;
+    }
+    printf("Reverse = %d", rev);
     return 0;
 }
 
