@@ -1037,17 +1037,37 @@ int main() {
 
 //Reverse of a number
 
+// #include <stdio.h>
+// int main() {
+//     int n, rev = 0;
+//     scanf("%d", &n);
+//     while(n != 0) {
+//         rev = rev * 10 + n % 10;
+//         n /= 10;
+//     }
+//     printf("Reverse = %d", rev);
+//     return 0;
+// }
+
+//Armstrong number
+
 #include <stdio.h>
 int main() {
-    int n, rev = 0;
+    int n, temp, rem, sum = 0;
     scanf("%d", &n);
+    temp = n;
     while(n != 0) {
-        rev = rev * 10 + n % 10;
+        rem = n % 10;
+        sum += rem * rem * rem;
         n /= 10;
     }
-    printf("Reverse = %d", rev);
+    if(sum == temp)
+        printf("Armstrong");
+    else
+        printf("Not Armstrong");
     return 0;
 }
+
 
 
 
