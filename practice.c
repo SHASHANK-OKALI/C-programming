@@ -1051,22 +1051,40 @@ int main() {
 
 //Armstrong number
 
+// #include <stdio.h>
+// int main() {
+//     int n, temp, rem, sum = 0;
+//     scanf("%d", &n);
+//     temp = n;
+//     while(n != 0) {
+//         rem = n % 10;
+//         sum += rem * rem * rem;
+//         n /= 10;
+//     }
+//     if(sum == temp)
+//         printf("Armstrong");
+//     else
+//         printf("Not Armstrong");
+//     return 0;
+// }
+
+//perfect number
+
 #include <stdio.h>
 int main() {
-    int n, temp, rem, sum = 0;
+    int n, sum = 0;
     scanf("%d", &n);
-    temp = n;
-    while(n != 0) {
-        rem = n % 10;
-        sum += rem * rem * rem;
-        n /= 10;
+    for(int i = 1; i < n; i++) {
+        if(n % i == 0)
+            sum += i;
     }
-    if(sum == temp)
-        printf("Armstrong");
+    if(sum == n)
+        printf("Perfect Number");
     else
-        printf("Not Armstrong");
+        printf("Not Perfect");
     return 0;
 }
+
 
 
 
