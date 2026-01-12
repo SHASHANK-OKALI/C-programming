@@ -1101,23 +1101,44 @@ int main() {
 
 //pascal's triangle
 
+// #include <stdio.h>
+// int fact(int n) {
+//     int f = 1;
+//     for(int i = 1; i <= n; i++)
+//         f *= i;
+//     return f;
+// }
+// int main() {
+//     int n;
+//     scanf("%d", &n);
+//     for(int i = 0; i < n; i++) {
+//         for(int j = 0; j <= i; j++)
+//             printf("%d ", fact(i) / (fact(j) * fact(i - j)));
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+//prime check using prime functions
+
 #include <stdio.h>
-int fact(int n) {
-    int f = 1;
-    for(int i = 1; i <= n; i++)
-        f *= i;
-    return f;
+int isPrime(int n) {
+    if(n <= 1) return 0;
+    for(int i = 2; i <= n/2; i++)
+        if(n % i == 0)
+            return 0;
+    return 1;
 }
 int main() {
     int n;
     scanf("%d", &n);
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j <= i; j++)
-            printf("%d ", fact(i) / (fact(j) * fact(i - j)));
-        printf("\n");
-    }
+    if(isPrime(n))
+        printf("Prime");
+    else
+        printf("Not Prime");
     return 0;
 }
+
 
 
 
