@@ -1141,18 +1141,37 @@ int main() {
 
 //gcd using functions
 
+// #include <stdio.h>
+// int gcd(int a, int b) {
+//     if(b == 0)
+//         return a;
+//     return gcd(b, a % b);
+// }
+// int main() {
+//     int a, b;
+//     scanf("%d %d", &a, &b);
+//     printf("GCD = %d", gcd(a, b));
+//     return 0;
+// }
+
+//Neon number
+
 #include <stdio.h>
-int gcd(int a, int b) {
-    if(b == 0)
-        return a;
-    return gcd(b, a % b);
-}
 int main() {
-    int a, b;
-    scanf("%d %d", &a, &b);
-    printf("GCD = %d", gcd(a, b));
+    int n, sq, sum = 0;
+    scanf("%d", &n);
+    sq = n * n;
+    while(sq != 0) {
+        sum += sq % 10;
+        sq /= 10;
+    }
+    if(sum == n)
+        printf("Neon Number");
+    else
+        printf("Not Neon");
     return 0;
 }
+
 
 
 
