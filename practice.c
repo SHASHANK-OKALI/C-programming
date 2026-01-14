@@ -1174,21 +1174,44 @@ int main() {
 
 //atmospheric number
 
+// #include <stdio.h>
+// int main() {
+//     int n, sq, temp;
+//     scanf("%d", &n);
+//     sq = n * n;
+//     temp = n;
+//     while(temp != 0) {
+//         if(temp % 10 != sq % 10) {
+//             printf("Not Automorphic");
+//             return 0;
+//         }
+//         temp /= 10;
+//         sq /= 10;
+//     }
+//     printf("Automorphic");
+//     return 0;
+// }
+
+
+//strong number
+
 #include <stdio.h>
 int main() {
-    int n, sq, temp;
+    int n, temp, sum = 0, fact, rem;
     scanf("%d", &n);
-    sq = n * n;
     temp = n;
-    while(temp != 0) {
-        if(temp % 10 != sq % 10) {
-            printf("Not Automorphic");
-            return 0;
-        }
-        temp /= 10;
-        sq /= 10;
+    while(n != 0) {
+        rem = n % 10;
+        fact = 1;
+        for(int i = 1; i <= rem; i++)
+            fact *= i;
+        sum += fact;
+        n /= 10;
     }
-    printf("Automorphic");
+    if(sum == temp)
+        printf("Strong Number");
+    else
+        printf("Not Strong");
     return 0;
 }
 
