@@ -1156,21 +1156,42 @@ int main() {
 
 //Neon number
 
+// #include <stdio.h>
+// int main() {
+//     int n, sq, sum = 0;
+//     scanf("%d", &n);
+//     sq = n * n;
+//     while(sq != 0) {
+//         sum += sq % 10;
+//         sq /= 10;
+//     }
+//     if(sum == n)
+//         printf("Neon Number");
+//     else
+//         printf("Not Neon");
+//     return 0;
+// }
+
+//atmospheric number
+
 #include <stdio.h>
 int main() {
-    int n, sq, sum = 0;
+    int n, sq, temp;
     scanf("%d", &n);
     sq = n * n;
-    while(sq != 0) {
-        sum += sq % 10;
+    temp = n;
+    while(temp != 0) {
+        if(temp % 10 != sq % 10) {
+            printf("Not Automorphic");
+            return 0;
+        }
+        temp /= 10;
         sq /= 10;
     }
-    if(sum == n)
-        printf("Neon Number");
-    else
-        printf("Not Neon");
+    printf("Automorphic");
     return 0;
 }
+
 
 
 
