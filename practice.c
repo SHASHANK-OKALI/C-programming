@@ -1195,25 +1195,47 @@ int main() {
 
 //strong number
 
+// #include <stdio.h>
+// int main() {
+//     int n, temp, sum = 0, fact, rem;
+//     scanf("%d", &n);
+//     temp = n;
+//     while(n != 0) {
+//         rem = n % 10;
+//         fact = 1;
+//         for(int i = 1; i <= rem; i++)
+//             fact *= i;
+//         sum += fact;
+//         n /= 10;
+//     }
+//     if(sum == temp)
+//         printf("Strong Number");
+//     else
+//         printf("Not Strong");
+//     return 0;
+// }
+
+//prime number between two numbers
+
 #include <stdio.h>
 int main() {
-    int n, temp, sum = 0, fact, rem;
-    scanf("%d", &n);
-    temp = n;
-    while(n != 0) {
-        rem = n % 10;
-        fact = 1;
-        for(int i = 1; i <= rem; i++)
-            fact *= i;
-        sum += fact;
-        n /= 10;
+    int a, b, flag;
+    scanf("%d %d", &a, &b);
+    for(int n = a; n <= b; n++) {
+        if(n <= 1) continue;
+        flag = 0;
+        for(int i = 2; i <= n/2; i++) {
+            if(n % i == 0) {
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 0)
+            printf("%d ", n);
     }
-    if(sum == temp)
-        printf("Strong Number");
-    else
-        printf("Not Strong");
     return 0;
 }
+
 
 
 
