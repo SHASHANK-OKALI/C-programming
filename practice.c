@@ -1217,24 +1217,39 @@ int main() {
 
 //prime number between two numbers
 
+// #include <stdio.h>
+// int main() {
+//     int a, b, flag;
+//     scanf("%d %d", &a, &b);
+//     for(int n = a; n <= b; n++) {
+//         if(n <= 1) continue;
+//         flag = 0;
+//         for(int i = 2; i <= n/2; i++) {
+//             if(n % i == 0) {
+//                 flag = 1;
+//                 break;
+//             }
+//         }
+//         if(flag == 0)
+//             printf("%d ", n);
+//     }
+//     return 0;
+// }
+
+//product of digits
+
 #include <stdio.h>
 int main() {
-    int a, b, flag;
-    scanf("%d %d", &a, &b);
-    for(int n = a; n <= b; n++) {
-        if(n <= 1) continue;
-        flag = 0;
-        for(int i = 2; i <= n/2; i++) {
-            if(n % i == 0) {
-                flag = 1;
-                break;
-            }
-        }
-        if(flag == 0)
-            printf("%d ", n);
+    int n, prod = 1;
+    scanf("%d", &n);
+    while(n != 0) {
+        prod *= n % 10;
+        n /= 10;
     }
+    printf("Product = %d", prod);
     return 0;
 }
+
 
 
 
