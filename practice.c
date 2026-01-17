@@ -1238,17 +1238,36 @@ int main() {
 
 //product of digits
 
+// #include <stdio.h>
+// int main() {
+//     int n, prod = 1;
+//     scanf("%d", &n);
+//     while(n != 0) {
+//         prod *= n % 10;
+//         n /= 10;
+//     }
+//     printf("Product = %d", prod);
+//     return 0;
+// }
+
+
+//check co prime numbers
+
 #include <stdio.h>
 int main() {
-    int n, prod = 1;
-    scanf("%d", &n);
-    while(n != 0) {
-        prod *= n % 10;
-        n /= 10;
+    int a, b, gcd = 1;
+    scanf("%d %d", &a, &b);
+    for(int i = 1; i <= a && i <= b; i++) {
+        if(a % i == 0 && b % i == 0)
+            gcd = i;
     }
-    printf("Product = %d", prod);
+    if(gcd == 1)
+        printf("Co-Prime");
+    else
+        printf("Not Co-Prime");
     return 0;
 }
+
 
 
 
