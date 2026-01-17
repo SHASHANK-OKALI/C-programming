@@ -1253,20 +1253,34 @@ int main() {
 
 //check co prime numbers
 
+// #include <stdio.h>
+// int main() {
+//     int a, b, gcd = 1;
+//     scanf("%d %d", &a, &b);
+//     for(int i = 1; i <= a && i <= b; i++) {
+//         if(a % i == 0 && b % i == 0)
+//             gcd = i;
+//     }
+//     if(gcd == 1)
+//         printf("Co-Prime");
+//     else
+//         printf("Not Co-Prime");
+//     return 0;
+// }
+
+//prime factors of a Number
+
 #include <stdio.h>
 int main() {
-    int a, b, gcd = 1;
-    scanf("%d %d", &a, &b);
-    for(int i = 1; i <= a && i <= b; i++) {
-        if(a % i == 0 && b % i == 0)
-            gcd = i;
+    int n;
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++) {
+        if(n % i == 0)
+            printf("%d ", i);
     }
-    if(gcd == 1)
-        printf("Co-Prime");
-    else
-        printf("Not Co-Prime");
     return 0;
 }
+
 
 
 
