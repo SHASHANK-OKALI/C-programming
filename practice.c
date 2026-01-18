@@ -1284,23 +1284,36 @@ int main() {
 
 //Duck number
 
+// #include <stdio.h>
+// int main() {
+//     int n, flag = 0;
+//     scanf("%d", &n);
+//     while(n != 0) {
+//         if(n % 10 == 0) {
+//             flag = 1;
+//             break;
+//         }
+//         n /= 10;
+//     }
+//     if(flag)
+//         printf("Duck Number");
+//     else
+//         printf("Not Duck");
+//     return 0;
+// }
+
+//sum of AP numbers
+
 #include <stdio.h>
 int main() {
-    int n, flag = 0;
-    scanf("%d", &n);
-    while(n != 0) {
-        if(n % 10 == 0) {
-            flag = 1;
-            break;
-        }
-        n /= 10;
-    }
-    if(flag)
-        printf("Duck Number");
-    else
-        printf("Not Duck");
+    int a, d, n, sum = 0;
+    scanf("%d %d %d", &a, &d, &n);
+    for(int i = 0; i < n; i++)
+        sum += a + i * d;
+    printf("Sum = %d", sum);
     return 0;
 }
+
 
 
 
