@@ -1316,21 +1316,37 @@ int main() {
 
 //Replace 0 with 1 in a number
 
+// #include <stdio.h>
+// int main() {
+//     int n, digit, place = 1, result = 0;
+//     scanf("%d", &n);
+//     while(n != 0) {
+//         digit = n % 10;
+//         if(digit == 0)
+//             digit = 1;
+//         result += digit * place;
+//         place *= 10;
+//         n /= 10;
+//     }
+//     printf("Result = %d", result);
+//     return 0;
+// }
+
+//Decimal to Binary
+
 #include <stdio.h>
 int main() {
-    int n, digit, place = 1, result = 0;
+    int n, bin[20], i = 0;
     scanf("%d", &n);
-    while(n != 0) {
-        digit = n % 10;
-        if(digit == 0)
-            digit = 1;
-        result += digit * place;
-        place *= 10;
-        n /= 10;
+    while(n > 0) {
+        bin[i++] = n % 2;
+        n /= 2;
     }
-    printf("Result = %d", result);
+    for(int j = i - 1; j >= 0; j--)
+        printf("%d", bin[j]);
     return 0;
 }
+
 
 
 
