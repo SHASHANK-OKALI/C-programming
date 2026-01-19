@@ -1304,15 +1304,34 @@ int main() {
 
 //sum of AP numbers
 
+// #include <stdio.h>
+// int main() {
+//     int a, d, n, sum = 0;
+//     scanf("%d %d %d", &a, &d, &n);
+//     for(int i = 0; i < n; i++)
+//         sum += a + i * d;
+//     printf("Sum = %d", sum);
+//     return 0;
+// }
+
+//Replace 0 with 1 in a number
+
 #include <stdio.h>
 int main() {
-    int a, d, n, sum = 0;
-    scanf("%d %d %d", &a, &d, &n);
-    for(int i = 0; i < n; i++)
-        sum += a + i * d;
-    printf("Sum = %d", sum);
+    int n, digit, place = 1, result = 0;
+    scanf("%d", &n);
+    while(n != 0) {
+        digit = n % 10;
+        if(digit == 0)
+            digit = 1;
+        result += digit * place;
+        place *= 10;
+        n /= 10;
+    }
+    printf("Result = %d", result);
     return 0;
 }
+
 
 
 
