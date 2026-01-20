@@ -1334,18 +1334,35 @@ int main() {
 
 //Decimal to Binary
 
-#include <stdio.h>
-int main() {
-    int n, bin[20], i = 0;
-    scanf("%d", &n);
-    while(n > 0) {
-        bin[i++] = n % 2;
-        n /= 2;
-    }
-    for(int j = i - 1; j >= 0; j--)
-        printf("%d", bin[j]);
-    return 0;
-}
+// #include <stdio.h>
+// int main() {
+//     int n, bin[20], i = 0;
+//     scanf("%d", &n);
+//     while(n > 0) {
+//         bin[i++] = n % 2;
+//         n /= 2;
+//     }
+//     for(int j = i - 1; j >= 0; j--)
+//         printf("%d", bin[j]);
+//     return 0;
+// }
+
+//Sunny Number
+
+// #include <stdio.h>
+// int main() {
+//     int n, i;
+//     scanf("%d", &n);
+//     for(i = 1; i * i <= n + 1; i++);
+//     if(i * i == n + 1)
+//         printf("Sunny Number");
+//     else
+//         printf("Not Sunny");
+//     return 0;
+// }
+
+
+
 
 
 
