@@ -1361,6 +1361,21 @@ int main() {
 //     return 0;
 // }
 
+//Geometric Progression (GP) Series
+
+#include <stdio.h>
+int main() {
+    int a, r, n, term = 1;
+    scanf("%d %d %d", &a, &r, &n);
+    term = a;
+    for(int i = 1; i <= n; i++) {
+        printf("%d ", term);
+        term *= r;
+    }
+    return 0;
+}
+
+
 
 
 
