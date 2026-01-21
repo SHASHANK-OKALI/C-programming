@@ -1378,21 +1378,38 @@ int main() {
 
 //HCF for multiple numbers
 
+// #include <stdio.h>
+// int gcd(int a, int b) {
+//     return (b == 0) ? a : gcd(b, a % b);
+// }
+// int main() {
+//     int n, arr[10];
+//     scanf("%d", &n);
+//     for(int i = 0; i < n; i++)
+//         scanf("%d", &arr[i]);
+//     int result = arr[0];
+//     for(int i = 1; i < n; i++)
+//         result = gcd(result, arr[i]);
+//     printf("HCF = %d", result);
+//     return 0;
+// }
+
+//sum of digits at even positions
+
 #include <stdio.h>
-int gcd(int a, int b) {
-    return (b == 0) ? a : gcd(b, a % b);
-}
 int main() {
-    int n, arr[10];
+    int n, pos = 1, sum = 0;
     scanf("%d", &n);
-    for(int i = 0; i < n; i++)
-        scanf("%d", &arr[i]);
-    int result = arr[0];
-    for(int i = 1; i < n; i++)
-        result = gcd(result, arr[i]);
-    printf("HCF = %d", result);
+    while(n != 0) {
+        if(pos % 2 == 0)
+            sum += n % 10;
+        n /= 10;
+        pos++;
+    }
+    printf("Sum = %d", sum);
     return 0;
 }
+
 
 
 
