@@ -1363,17 +1363,37 @@ int main() {
 
 //Geometric Progression (GP) Series
 
+// #include <stdio.h>
+// int main() {
+//     int a, r, n, term = 1;
+//     scanf("%d %d %d", &a, &r, &n);
+//     term = a;
+//     for(int i = 1; i <= n; i++) {
+//         printf("%d ", term);
+//         term *= r;
+//     }
+//     return 0;
+// }
+
+
+//HCF for multiple numbers
+
 #include <stdio.h>
+int gcd(int a, int b) {
+    return (b == 0) ? a : gcd(b, a % b);
+}
 int main() {
-    int a, r, n, term = 1;
-    scanf("%d %d %d", &a, &r, &n);
-    term = a;
-    for(int i = 1; i <= n; i++) {
-        printf("%d ", term);
-        term *= r;
-    }
+    int n, arr[10];
+    scanf("%d", &n);
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int result = arr[0];
+    for(int i = 1; i < n; i++)
+        result = gcd(result, arr[i]);
+    printf("HCF = %d", result);
     return 0;
 }
+
 
 
 
