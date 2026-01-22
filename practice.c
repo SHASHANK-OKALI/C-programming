@@ -1412,11 +1412,22 @@ int main() {
 
 //Area of circle
 
+// #include <stdio.h>
+// int main() {
+//     float r;
+//     scanf("%f", &r);
+//     printf("Area = %.2f", 3.14 * r * r);
+//     return 0;
+// }
+
+
+//simple interest
+
 #include <stdio.h>
 int main() {
-    float r;
-    scanf("%f", &r);
-    printf("Area = %.2f", 3.14 * r * r);
+    float p, r, t;
+    scanf("%f %f %f", &p, &r, &t);
+    printf("Simple Interest = %.2f", (p * r * t) / 100);
     return 0;
 }
 
