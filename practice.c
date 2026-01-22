@@ -1396,19 +1396,30 @@ int main() {
 
 //sum of digits at even positions
 
+// #include <stdio.h>
+// int main() {
+//     int n, pos = 1, sum = 0;
+//     scanf("%d", &n);
+//     while(n != 0) {
+//         if(pos % 2 == 0)
+//             sum += n % 10;
+//         n /= 10;
+//         pos++;
+//     }
+//     printf("Sum = %d", sum);
+//     return 0;
+// }
+
+//Area of circle
+
 #include <stdio.h>
 int main() {
-    int n, pos = 1, sum = 0;
-    scanf("%d", &n);
-    while(n != 0) {
-        if(pos % 2 == 0)
-            sum += n % 10;
-        n /= 10;
-        pos++;
-    }
-    printf("Sum = %d", sum);
+    float r;
+    scanf("%f", &r);
+    printf("Area = %.2f", 3.14 * r * r);
     return 0;
 }
+
 
 
 
