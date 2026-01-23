@@ -1434,18 +1434,37 @@ int main() {
 
 //unit converter
 
+// #include <stdio.h>
+
+// int main() {
+//     float celsius, fahrenheit;
+
+//     printf("Enter temperature in Celsius: ");
+//     scanf("%f", &celsius);
+
+    
+//     fahrenheit = (celsius * 9 / 5) + 32;
+
+//     printf("%.2f Celsius is equal to %.2f Fahrenheit\n", celsius, fahrenheit);
+
+//     return 0;
+// }
+
+// The odd or even checker
+
 #include <stdio.h>
 
 int main() {
-    float celsius, fahrenheit;
+    int num;
 
-    printf("Enter temperature in Celsius: ");
-    scanf("%f", &celsius);
+    printf("Enter an integer: ");
+    scanf("%d", &num);
 
-    // Formula: (C * 9/5) + 32
-    fahrenheit = (celsius * 9 / 5) + 32;
-
-    printf("%.2f Celsius is equal to %.2f Fahrenheit\n", celsius, fahrenheit);
+    if (num % 2 == 0) {
+        printf("%d is even.\n", num);
+    } else {
+        printf("%d is odd.\n", num);
+    }
 
     return 0;
 }
