@@ -1423,11 +1423,30 @@ int main() {
 
 //simple interest
 
+// #include <stdio.h>
+// int main() {
+//     float p, r, t;
+//     scanf("%f %f %f", &p, &r, &t);
+//     printf("Simple Interest = %.2f", (p * r * t) / 100);
+//     return 0;
+// }
+
+
+//unit converter
+
 #include <stdio.h>
+
 int main() {
-    float p, r, t;
-    scanf("%f %f %f", &p, &r, &t);
-    printf("Simple Interest = %.2f", (p * r * t) / 100);
+    float celsius, fahrenheit;
+
+    printf("Enter temperature in Celsius: ");
+    scanf("%f", &celsius);
+
+    // Formula: (C * 9/5) + 32
+    fahrenheit = (celsius * 9 / 5) + 32;
+
+    printf("%.2f Celsius is equal to %.2f Fahrenheit\n", celsius, fahrenheit);
+
     return 0;
 }
 
