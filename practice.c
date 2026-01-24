@@ -1452,22 +1452,47 @@ int main() {
 
 // The odd or even checker
 
+// #include <stdio.h>
+
+// int main() {
+//     int num;
+
+//     printf("Enter an integer: ");
+//     scanf("%d", &num);
+
+//     if (num % 2 == 0) {
+//         printf("%d is even.\n", num);
+//     } else {
+//         printf("%d is odd.\n", num);
+//     }
+
+//     return 0;
+// }
+
+//Check Number is Palindromic Prime
+
 #include <stdio.h>
-
-int main() {
-    int num;
-
-    printf("Enter an integer: ");
-    scanf("%d", &num);
-
-    if (num % 2 == 0) {
-        printf("%d is even.\n", num);
-    } else {
-        printf("%d is odd.\n", num);
-    }
-
+int isPrime(int n){
+    if(n<=1) return 0;
+    for(int i=2;i<=n/2;i++)
+        if(n%i==0) return 0;
+    return 1;
+}
+int reverse(int n){
+    int r=0;
+    while(n){ r=r*10+n%10; n/=10; }
+    return r;
+}
+int main(){
+    int n;
+    scanf("%d",&n);
+    if(isPrime(n) && reverse(n)==n)
+        printf("Palindromic Prime");
+    else
+        printf("Not Palindromic Prime");
     return 0;
 }
+
 
 
 
