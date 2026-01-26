@@ -1526,20 +1526,38 @@ int main() {
 
 //Identity matrix check
 
+// #include <stdio.h>
+// int main() {
+//     int n,a[10][10],flag=1;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++)
+//         for(int j=0;j<n;j++){
+//             scanf("%d",&a[i][j]);
+//             if((i==j && a[i][j]!=1) || (i!=j && a[i][j]!=0))
+//                 flag=0;
+//         }
+//     if(flag) printf("Identity Matrix");
+//     else printf("Not Identity");
+//     return 0;
+// }
+
+
+//kaprekar number
+
 #include <stdio.h>
+#include <math.h>
 int main() {
-    int n,a[10][10],flag=1;
+    int n,sq,d,p1,p2;
     scanf("%d",&n);
-    for(int i=0;i<n;i++)
-        for(int j=0;j<n;j++){
-            scanf("%d",&a[i][j]);
-            if((i==j && a[i][j]!=1) || (i!=j && a[i][j]!=0))
-                flag=0;
-        }
-    if(flag) printf("Identity Matrix");
-    else printf("Not Identity");
+    sq=n*n;
+    d=log10(n)+1;
+    p1=sq/pow(10,d);
+    p2=sq%(int)pow(10,d);
+    if(p1+p2==n) printf("Kaprekar Number");
+    else printf("Not Kaprekar");
     return 0;
 }
+
 
 
 
