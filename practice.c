@@ -1561,26 +1561,38 @@ int main() {
 
 //keith number
 
+// #include <stdio.h>
+// int main() {
+//     int n,temp,a[10],i=0,sum;
+//     scanf("%d",&n);
+//     temp=n;
+//     while(temp){
+//         a[i++]=temp%10;
+//         temp/=10;
+//     }
+//     for(int j=i-1;j>=0;j--) printf("");
+//     while(sum<n){
+//         sum=0;
+//         for(int j=0;j<i;j++) sum+=a[j];
+//         for(int j=0;j<i-1;j++) a[j]=a[j+1];
+//         a[i-1]=sum;
+//     }
+//     if(sum==n) printf("Keith Number");
+//     else printf("Not Keith");
+//     return 0;
+// }
+
+//Toggle all bits
+
+
 #include <stdio.h>
 int main() {
-    int n,temp,a[10],i=0,sum;
+    int n;
     scanf("%d",&n);
-    temp=n;
-    while(temp){
-        a[i++]=temp%10;
-        temp/=10;
-    }
-    for(int j=i-1;j>=0;j--) printf("");
-    while(sum<n){
-        sum=0;
-        for(int j=0;j<i;j++) sum+=a[j];
-        for(int j=0;j<i-1;j++) a[j]=a[j+1];
-        a[i-1]=sum;
-    }
-    if(sum==n) printf("Keith Number");
-    else printf("Not Keith");
+    printf("Result = %d", ~n);
     return 0;
 }
+
 
 
 
