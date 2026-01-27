@@ -1544,17 +1544,41 @@ int main() {
 
 //kaprekar number
 
+// #include <stdio.h>
+// #include <math.h>
+// int main() {
+//     int n,sq,d,p1,p2;
+//     scanf("%d",&n);
+//     sq=n*n;
+//     d=log10(n)+1;
+//     p1=sq/pow(10,d);
+//     p2=sq%(int)pow(10,d);
+//     if(p1+p2==n) printf("Kaprekar Number");
+//     else printf("Not Kaprekar");
+//     return 0;
+// }
+
+
+//keith number
+
 #include <stdio.h>
-#include <math.h>
 int main() {
-    int n,sq,d,p1,p2;
+    int n,temp,a[10],i=0,sum;
     scanf("%d",&n);
-    sq=n*n;
-    d=log10(n)+1;
-    p1=sq/pow(10,d);
-    p2=sq%(int)pow(10,d);
-    if(p1+p2==n) printf("Kaprekar Number");
-    else printf("Not Kaprekar");
+    temp=n;
+    while(temp){
+        a[i++]=temp%10;
+        temp/=10;
+    }
+    for(int j=i-1;j>=0;j--) printf("");
+    while(sum<n){
+        sum=0;
+        for(int j=0;j<i;j++) sum+=a[j];
+        for(int j=0;j<i-1;j++) a[j]=a[j+1];
+        a[i-1]=sum;
+    }
+    if(sum==n) printf("Keith Number");
+    else printf("Not Keith");
     return 0;
 }
 
