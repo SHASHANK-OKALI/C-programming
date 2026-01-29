@@ -1595,17 +1595,34 @@ int main() {
 
 //set bits
 
+// #include <stdio.h>
+// int main() {
+//     int n, count=0;
+//     scanf("%d",&n);
+//     while(n){
+//         count += n & 1;
+//         n >>= 1;
+//     }
+//     printf("Set Bits = %d", count);
+//     return 0;
+// }
+
+//Frequency of digit
+
 #include <stdio.h>
 int main() {
-    int n, count=0;
+    int n, freq[10]={0};
     scanf("%d",&n);
     while(n){
-        count += n & 1;
-        n >>= 1;
+        freq[n%10]++;
+        n/=10;
     }
-    printf("Set Bits = %d", count);
+    for(int i=0;i<10;i++)
+        if(freq[i]>0)
+            printf("Digit %d → %d times\n", i, freq[i]);
     return 0;
 }
+
 
 
 
