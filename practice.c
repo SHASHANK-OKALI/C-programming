@@ -1585,13 +1585,28 @@ int main() {
 //Toggle all bits
 
 
+// #include <stdio.h>
+// int main() {
+//     int n;
+//     scanf("%d",&n);
+//     printf("Result = %d", ~n);
+//     return 0;
+// }
+
+//set bits
+
 #include <stdio.h>
 int main() {
-    int n;
+    int n, count=0;
     scanf("%d",&n);
-    printf("Result = %d", ~n);
+    while(n){
+        count += n & 1;
+        n >>= 1;
+    }
+    printf("Set Bits = %d", count);
     return 0;
 }
+
 
 
 
