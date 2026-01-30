@@ -1625,24 +1625,40 @@ int main() {
 
 //second largest number in array
 
+// #include <stdio.h>
+// int main() {
+//     int n, a[20], max, smax;
+//     scanf("%d", &n);
+//     for(int i = 0; i < n; i++)
+//         scanf("%d", &a[i]);
+//     max = smax = a[0];
+//     for(int i = 1; i < n; i++) {
+//         if(a[i] > max) {
+//             smax = max;
+//             max = a[i];
+//         } else if(a[i] > smax && a[i] != max) {
+//             smax = a[i];
+//         }
+//     }
+//     printf("Second Largest = %d", smax);
+//     return 0;
+// }
+
+//Lucas series
+
 #include <stdio.h>
 int main() {
-    int n, a[20], max, smax;
-    scanf("%d", &n);
-    for(int i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-    max = smax = a[0];
-    for(int i = 1; i < n; i++) {
-        if(a[i] > max) {
-            smax = max;
-            max = a[i];
-        } else if(a[i] > smax && a[i] != max) {
-            smax = a[i];
-        }
+    int n, a=2, b=1, c;
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        printf("%d ", a);
+        c=a+b;
+        a=b;
+        b=c;
     }
-    printf("Second Largest = %d", smax);
     return 0;
 }
+
 
 
 
