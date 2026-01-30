@@ -1609,19 +1609,41 @@ int main() {
 
 //Frequency of digit
 
+// #include <stdio.h>
+// int main() {
+//     int n, freq[10]={0};
+//     scanf("%d",&n);
+//     while(n){
+//         freq[n%10]++;
+//         n/=10;
+//     }
+//     for(int i=0;i<10;i++)
+//         if(freq[i]>0)
+//             printf("Digit %d → %d times\n", i, freq[i]);
+//     return 0;
+// }
+
+//second largest number in array
+
 #include <stdio.h>
 int main() {
-    int n, freq[10]={0};
-    scanf("%d",&n);
-    while(n){
-        freq[n%10]++;
-        n/=10;
+    int n, a[20], max, smax;
+    scanf("%d", &n);
+    for(int i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+    max = smax = a[0];
+    for(int i = 1; i < n; i++) {
+        if(a[i] > max) {
+            smax = max;
+            max = a[i];
+        } else if(a[i] > smax && a[i] != max) {
+            smax = a[i];
+        }
     }
-    for(int i=0;i<10;i++)
-        if(freq[i]>0)
-            printf("Digit %d → %d times\n", i, freq[i]);
+    printf("Second Largest = %d", smax);
     return 0;
 }
+
 
 
 
