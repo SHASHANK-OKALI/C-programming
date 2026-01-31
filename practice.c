@@ -1646,18 +1646,35 @@ int main() {
 
 //Lucas series
 
+// #include <stdio.h>
+// int main() {
+//     int n, a=2, b=1, c;
+//     scanf("%d",&n);
+//     for(int i=1;i<=n;i++){
+//         printf("%d ", a);
+//         c=a+b;
+//         a=b;
+//         b=c;
+//     }
+//     return 0;
+// }
+
+
+//Tribonaci series
+
 #include <stdio.h>
 int main() {
-    int n, a=2, b=1, c;
-    scanf("%d",&n);
-    for(int i=1;i<=n;i++){
-        printf("%d ", a);
-        c=a+b;
-        a=b;
-        b=c;
+    int n, a=0, b=1, c=1, d;
+    scanf("%d", &n);
+    printf("%d %d %d ", a, b, c);
+    for(int i=4;i<=n;i++){
+        d=a+b+c;
+        printf("%d ", d);
+        a=b; b=c; c=d;
     }
     return 0;
 }
+
 
 
 
