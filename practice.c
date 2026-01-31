@@ -1662,18 +1662,37 @@ int main() {
 
 //Tribonaci series
 
+// #include <stdio.h>
+// int main() {
+//     int n, a=0, b=1, c=1, d;
+//     scanf("%d", &n);
+//     printf("%d %d %d ", a, b, c);
+//     for(int i=4;i<=n;i++){
+//         d=a+b+c;
+//         printf("%d ", d);
+//         a=b; b=c; c=d;
+//     }
+//     return 0;
+// }
+
+//Digital root of a number
+
 #include <stdio.h>
 int main() {
-    int n, a=0, b=1, c=1, d;
+    int n, sum;
     scanf("%d", &n);
-    printf("%d %d %d ", a, b, c);
-    for(int i=4;i<=n;i++){
-        d=a+b+c;
-        printf("%d ", d);
-        a=b; b=c; c=d;
+    while(n > 9) {
+        sum = 0;
+        while(n != 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        n = sum;
     }
+    printf("Digital Root = %d", n);
     return 0;
 }
+
 
 
 
