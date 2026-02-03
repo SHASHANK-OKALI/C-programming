@@ -230,62 +230,62 @@
 // }
     
 
-#include<stdio.h>
-#include<stdlib.h>
+// #include<stdio.h>
+// #include<stdlib.h>
 
-struct Node{
-    int data;
-    struct Node*next;
-}
+// struct Node{
+//     int data;
+//     struct Node*next;
+// };
 
-void displayNodes(struct Node*head){
-    printf("Linked List Nodes:");
-    while(head!=NULL){
-        printf("%d",head->data);
-        head = head->next;
-    }
-    printf("\n");
-}
+// void displayNodes(struct Node*head){
+//     printf("Linked List Nodes:");
+//     while(head!=NULL){
+//         printf("%d",head->data);
+//         head = head->next;
+//     }
+//     printf("\n");
+// }
 
-int countNodes(struct Node*head){
-    int count=0;
-    while(head!=NULL)
-    {
-       count++;
-       head=head->next;
-    }
-    return count;
-}
+// int countNodes(struct Node*head){
+//     int count=0;
+//     while(head!=NULL)
+//     {
+//        count++;
+//        head=head->next;
+//     }
+//     return count;
+// }
 
-int main(){
+// int main(){
 
-    struct Node*head=NULL;
+//     struct Node*head=NULL;
 
-    head=(struct Node*)malloc(sizeof(struct Node));
-    head->data=1;
-    head->next=NULL;
+//     head=(struct Node*)malloc(sizeof(struct Node));
+//     head->data=1;
+//     head->next=NULL;
 
-    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
-    second ->data=2;
-    second ->next=NULL;
-    head->next=second;
+//     struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+//     second ->data=2;
+//     second ->next=NULL;
+//     head->next=second;
 
-    struct Node* third = (struct Node*)malloc(sizeof(structNodes));
-    third ->data=3;
-    third ->next=NULL;
-    second->next=third;
+//     struct Node* third = (struct Node*)malloc(sizeof(struct Node));
+//     third ->data=3;
+//     third ->next=NULL;
+//     second->next=third;
 
-    displayNodes(head);
+//     displayNodes(head);
 
-    int nodeCount = countNodes(head);
-    printf("Number of nodes in the linked list : %d\n",nodeCount);
+//     int nodeCount = countNodes(head);
+//     printf("Number of nodes in the linked list : %d\n",nodeCount);
 
-    while(head!=NULL)
-    {
-        struct Node*temp=head;
-        head=head->next;
-        free(temp);
-    }
-    return 0;
-}
+//     while(head!=NULL)
+//     {
+//         struct Node*temp=head;
+//         head=head->next;
+//         free(temp);
+//     }
+//     return 0;
+// }
 
