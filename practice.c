@@ -1723,21 +1723,35 @@ int main() {
 
 //projectile motion using trignometry
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main()
+// {
+//     double u, angle, range;
+
+//     printf("Enter velocity and angle: ");
+//     scanf("%lf %lf", &u, &angle);
+
+//     range = (u*u * sin(2 * angle * M_PI / 180)) / 9.8;
+
+//     printf("Range of projectile = %.2lf meters", range);
+//     return 0;
+// }
+
+//wave generator
+
 #include <stdio.h>
 #include <math.h>
 
 int main()
 {
-    double u, angle, range;
-
-    printf("Enter velocity and angle: ");
-    scanf("%lf %lf", &u, &angle);
-
-    range = (u*u * sin(2 * angle * M_PI / 180)) / 9.8;
-
-    printf("Range of projectile = %.2lf meters", range);
+    printf("x   sin(x)\n");
+    for(double x = 0; x <= 2*M_PI; x += 0.3)
+        printf("%.2lf  %.2lf\n", x, sin(x));
     return 0;
 }
+
 
 
 
