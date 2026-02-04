@@ -1695,31 +1695,50 @@ int main() {
 
 //trignometric calculator
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main()
+// {
+//     double angle, rad;
+//     int choice;
+
+//     printf("Enter angle in degrees: ");
+//     scanf("%lf", &angle);
+
+//     rad = angle * (M_PI / 180);
+
+//     printf("1. Sin\n2. Cos\n3. Tan\nChoose: ");
+//     scanf("%d", &choice);
+
+//     switch(choice)
+//     {
+//         case 1: printf("sin(%.2lf) = %.4lf", angle, sin(rad)); break;
+//         case 2: printf("cos(%.2lf) = %.4lf", angle, cos(rad)); break;
+//         case 3: printf("tan(%.2lf) = %.4lf", angle, tan(rad)); break;
+//         default: printf("Invalid choice");
+//     }
+//     return 0;
+// }
+
+//projectile motion using trignometry
+
 #include <stdio.h>
 #include <math.h>
 
 int main()
 {
-    double angle, rad;
-    int choice;
+    double u, angle, range;
 
-    printf("Enter angle in degrees: ");
-    scanf("%lf", &angle);
+    printf("Enter velocity and angle: ");
+    scanf("%lf %lf", &u, &angle);
 
-    rad = angle * (M_PI / 180);
+    range = (u*u * sin(2 * angle * M_PI / 180)) / 9.8;
 
-    printf("1. Sin\n2. Cos\n3. Tan\nChoose: ");
-    scanf("%d", &choice);
-
-    switch(choice)
-    {
-        case 1: printf("sin(%.2lf) = %.4lf", angle, sin(rad)); break;
-        case 2: printf("cos(%.2lf) = %.4lf", angle, cos(rad)); break;
-        case 3: printf("tan(%.2lf) = %.4lf", angle, tan(rad)); break;
-        default: printf("Invalid choice");
-    }
+    printf("Range of projectile = %.2lf meters", range);
     return 0;
 }
+
 
 
 
