@@ -1756,19 +1756,37 @@ int main() {
 
 //square root of a number
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main() {
+//     double num;
+
+//     printf("Enter a positive number: ");
+//     if (scanf("%lf", &num) != 1 || num < 0) {
+//         printf("Invalid input. Please enter a non-negative number.\n");
+//         return 1;
+//     }
+
+//     printf("Square root of %.2lf = %.2lf\n", num, sqrt(num));
+//     return 0;
+// }
+
+//power of a number
+
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double num;
+    double base, exponent;
 
-    printf("Enter a positive number: ");
-    if (scanf("%lf", &num) != 1 || num < 0) {
-        printf("Invalid input. Please enter a non-negative number.\n");
+    printf("Enter base and exponent: ");
+    if (scanf("%lf %lf", &base, &exponent) != 2) {
+        printf("Invalid input.\n");
         return 1;
     }
 
-    printf("Square root of %.2lf = %.2lf\n", num, sqrt(num));
+    printf("%.2lf ^ %.2lf = %.2lf\n", base, exponent, pow(base, exponent));
     return 0;
 }
 
