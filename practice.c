@@ -1741,20 +1741,36 @@ int main() {
 
 //wave generator
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main()
+// {
+//     printf("x   sin(x)\n");
+//     for(double x = 0; x <= 2*M_PI; x += 0.3)
+//         printf("%.2lf  %.2lf\n", x, sin(x));
+//     return 0;
+// }
+
+
+
+//square root of a number
+
 #include <stdio.h>
 #include <math.h>
 
-int main()
-{
-    printf("x   sin(x)\n");
-    for(double x = 0; x <= 2*M_PI; x += 0.3)
-        printf("%.2lf  %.2lf\n", x, sin(x));
+int main() {
+    double num;
+
+    printf("Enter a positive number: ");
+    if (scanf("%lf", &num) != 1 || num < 0) {
+        printf("Invalid input. Please enter a non-negative number.\n");
+        return 1;
+    }
+
+    printf("Square root of %.2lf = %.2lf\n", num, sqrt(num));
     return 0;
 }
-
-
-
-
 
 
 
