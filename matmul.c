@@ -54,7 +54,7 @@
 #include <math.h>
 
 double f(double x) {
-    return sin(x);  // example function
+    return sin(x); 
 }
 
 double trapezoidal(double a, double b, int n) {
