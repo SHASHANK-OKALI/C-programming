@@ -1774,21 +1774,25 @@ int main() {
 
 //power of a number
 
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 
-int main() {
-    double base, exponent;
+// int main() {
+//     double base, exponent;
 
-    printf("Enter base and exponent: ");
-    if (scanf("%lf %lf", &base, &exponent) != 2) {
-        printf("Invalid input.\n");
-        return 1;
-    }
+//     printf("Enter base and exponent: ");
+//     if (scanf("%lf %lf", &base, &exponent) != 2) {
+//         printf("Invalid input.\n");
+//         return 1;
+//     }
 
-    printf("%.2lf ^ %.2lf = %.2lf\n", base, exponent, pow(base, exponent));
-    return 0;
-}
+//     printf("%.2lf ^ %.2lf = %.2lf\n", base, exponent, pow(base, exponent));
+//     return 0;
+// }
+
+
+
+
 
 
 
