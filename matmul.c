@@ -50,31 +50,31 @@
 
 //Numerical integration
 
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 
-double f(double x) {
-    return sin(x); 
-}
+// double f(double x) {
+//     return sin(x); 
+// }
 
-double trapezoidal(double a, double b, int n) {
-    double h = (b - a) / n;
-    double sum = (f(a) + f(b)) / 2.0;
-    for (int i = 1; i < n; i++)
-        sum += f(a + i * h);
-    return sum * h;
-}
+// double trapezoidal(double a, double b, int n) {
+//     double h = (b - a) / n;
+//     double sum = (f(a) + f(b)) / 2.0;
+//     for (int i = 1; i < n; i++)
+//         sum += f(a + i * h);
+//     return sum * h;
+// }
 
-int main() {
-    double a, b;
-    int n;
-    printf("Enter lower and upper limits: ");
-    scanf("%lf %lf", &a, &b);
-    printf("Enter number of intervals: ");
-    scanf("%d", &n);
+// int main() {
+//     double a, b;
+//     int n;
+//     printf("Enter lower and upper limits: ");
+//     scanf("%lf %lf", &a, &b);
+//     printf("Enter number of intervals: ");
+//     scanf("%d", &n);
 
-    double result = trapezoidal(a, b, n);
-    printf("Integral (approx) = %.6lf\n", result);
-    return 0;
-}
+//     double result = trapezoidal(a, b, n);
+//     printf("Integral (approx) = %.6lf\n", result);
+//     return 0;
+// }
 
