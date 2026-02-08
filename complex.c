@@ -37,32 +37,32 @@
 
 //taylor series expansion
 
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 
-int main() {
-    int n, i;
-    float x, deg, sum, term;
+// int main() {
+//     int n, i;
+//     float x, deg, sum, term;
 
-    printf("Enter angle in degrees: ");
-    scanf("%f", &deg);
-    printf("Enter number of terms: ");
-    scanf("%d", &n);
+//     printf("Enter angle in degrees: ");
+//     scanf("%f", &deg);
+//     printf("Enter number of terms: ");
+//     scanf("%d", &n);
 
-    // Convert degrees to radians
-    x = deg * (3.14159 / 180);
+//     // Convert degrees to radians
+//     x = deg * (3.14159 / 180);
     
-    term = x;
-    sum = x;
+//     term = x;
+//     sum = x;
 
-    for (i = 1; i <= n; i++) {
-        // Each term relates to the previous one to avoid calculating factorials from scratch
-        term = -term * x * x / ((2 * i) * (2 * i + 1));
-        sum += term;
-    }
+//     for (i = 1; i <= n; i++) {
+//         // Each term relates to the previous one to avoid calculating factorials from scratch
+//         term = -term * x * x / ((2 * i) * (2 * i + 1));
+//         sum += term;
+//     }
 
-    printf("Taylor Series sin(%f) = %f\n", deg, sum);
-    printf("Math Library sin(%f) = %f\n", deg, sin(x));
+//     printf("Taylor Series sin(%f) = %f\n", deg, sum);
+//     printf("Math Library sin(%f) = %f\n", deg, sin(x));
 
-    return 0;
-}
+//     return 0;
+// }
