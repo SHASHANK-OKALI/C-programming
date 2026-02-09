@@ -1792,20 +1792,21 @@ int main() {
 
 //multi
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main() {
-    int n, i;
+// int main() {
+//     int n, i;
 
-    printf("Enter a number to see its table: ");
-    scanf("%d", &n);
+//     printf("Enter a number to see its table: ");
+//     scanf("%d", &n);
 
-    for (i = 1; i <= 10; ++i) {
-        printf("%d * %d = %d\n", n, i, n * i);
-    }
+//     for (i = 1; i <= 10; ++i) {
+//         printf("%d * %d = %d\n", n, i, n * i);
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
+
 
 
 
