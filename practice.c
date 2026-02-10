@@ -1826,40 +1826,76 @@ int main() {
 
 //simple singly linked list
 
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// struct Node {
+//     int data;
+//     struct Node* next;
+// };
+
+// void printList(struct Node* n) {
+//     while (n != NULL) {
+//         printf("%d -> ", n->data);
+//         n = n->next;
+//     }
+//     printf("NULL\n");
+// }
+
+// int main() {
+//     struct Node* head = (struct Node*)malloc(sizeof(struct Node));
+//     struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+//     struct Node* third = (struct Node*)malloc(sizeof(struct Node));
+
+//     head->data = 10; 
+//     head->next = second; 
+
+//     second->data = 20;
+//     second->next = third;
+
+//     third->data = 30;
+//     third->next = NULL;
+
+//     printList(head);
+//     return 0;
+// }
+
+
+//queue uisng an array
+
 #include <stdio.h>
-#include <stdlib.h>
+#define SIZE 5
 
-struct Node {
-    int data;
-    struct Node* next;
-};
+int items[SIZE], front = -1, rear = -1;
 
-void printList(struct Node* n) {
-    while (n != NULL) {
-        printf("%d -> ", n->data);
-        n = n->next;
+void enqueue(int value) {
+    if (rear == SIZE - 1)
+        printf("Queue is Full!\n");
+    else {
+        if (front == -1) front = 0;
+        rear++;
+        items[rear] = value;
+        printf("Inserted %d\n", value);
     }
-    printf("NULL\n");
+}
+
+void dequeue() {
+    if (front == -1 || front > rear)
+        printf("Queue is Empty!\n");
+    else {
+        printf("Removed %d\n", items[front]);
+        front++;
+    }
 }
 
 int main() {
-    struct Node* head = (struct Node*)malloc(sizeof(struct Node));
-    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
-    struct Node* third = (struct Node*)malloc(sizeof(struct Node));
-
-    head->data = 10; 
-    head->next = second; 
-
-    second->data = 20;
-    second->next = third;
-
-    third->data = 30;
-    third->next = NULL;
-
-    printList(head);
+    enqueue(1);
+    enqueue(2);
+    enqueue(3);
+    dequeue();
+    dequeue();
     return 0;
 }
-
 
 
 
