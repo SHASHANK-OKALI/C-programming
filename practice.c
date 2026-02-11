@@ -1863,38 +1863,55 @@ int main() {
 
 //queue uisng an array
 
+// #include <stdio.h>
+// #define SIZE 5
+
+// int items[SIZE], front = -1, rear = -1;
+
+// void enqueue(int value) {
+//     if (rear == SIZE - 1)
+//         printf("Queue is Full!\n");
+//     else {
+//         if (front == -1) front = 0;
+//         rear++;
+//         items[rear] = value;
+//         printf("Inserted %d\n", value);
+//     }
+// }
+
+// void dequeue() {
+//     if (front == -1 || front > rear)
+//         printf("Queue is Empty!\n");
+//     else {
+//         printf("Removed %d\n", items[front]);
+//         front++;
+//     }
+// }
+
+// int main() {
+//     enqueue(1);
+//     enqueue(2);
+//     enqueue(3);
+//     dequeue();
+//     dequeue();
+//     return 0;
+// }
+
+//selection sort
+
 #include <stdio.h>
-#define SIZE 5
 
-int items[SIZE], front = -1, rear = -1;
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        int min_idx = i;
+        for (int j = i+1; j < n; j++)
+            if (arr[j] < arr[min_idx]) min_idx = j;
 
-void enqueue(int value) {
-    if (rear == SIZE - 1)
-        printf("Queue is Full!\n");
-    else {
-        if (front == -1) front = 0;
-        rear++;
-        items[rear] = value;
-        printf("Inserted %d\n", value);
+        // Swap the found minimum element with the first element
+        int temp = arr[min_idx];
+        arr[min_idx] = arr[i];
+        arr[i] = temp;
     }
-}
-
-void dequeue() {
-    if (front == -1 || front > rear)
-        printf("Queue is Empty!\n");
-    else {
-        printf("Removed %d\n", items[front]);
-        front++;
-    }
-}
-
-int main() {
-    enqueue(1);
-    enqueue(2);
-    enqueue(3);
-    dequeue();
-    dequeue();
-    return 0;
 }
 
 
