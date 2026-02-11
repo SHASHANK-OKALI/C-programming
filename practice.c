@@ -1899,18 +1899,34 @@ int main() {
 
 //selection sort
 
-#include <stdio.h>
+// #include <stdio.h>
 
-void selectionSort(int arr[], int n) {
-    for (int i = 0; i < n-1; i++) {
-        int min_idx = i;
-        for (int j = i+1; j < n; j++)
-            if (arr[j] < arr[min_idx]) min_idx = j;
+// void selectionSort(int arr[], int n) {
+//     for (int i = 0; i < n-1; i++) {
+//         int min_idx = i;
+//         for (int j = i+1; j < n; j++)
+//             if (arr[j] < arr[min_idx]) min_idx = j;
 
-        // Swap the found minimum element with the first element
-        int temp = arr[min_idx];
-        arr[min_idx] = arr[i];
-        arr[i] = temp;
+//         // Swap the found minimum element with the first element
+//         int temp = arr[min_idx];
+//         arr[min_idx] = arr[i];
+//         arr[i] = temp;
+//     }
+// }
+
+//insertion sort
+
+void insertionSort(int arr[], int n) {
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+
+        // Move elements of arr[0..i-1] that are greater than key
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
     }
 }
 
