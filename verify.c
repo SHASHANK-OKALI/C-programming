@@ -39,18 +39,32 @@
 
 //find hypotenuse
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main() {
+//     double adj, deg, rad;
+//     scanf("%lf %lf", &adj, &deg);
+
+//     rad = deg * M_PI / 180;
+
+//     double hyp = adj / cos(rad);
+
+//     printf("Hypotenuse = %.2lf", hyp);
+
+//     return 0;
+// }
+
+//Inverse trignometric 
+
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double adj, deg, rad;
-    scanf("%lf %lf", &adj, &deg);
+    double x;
+    scanf("%lf", &x);
 
-    rad = deg * M_PI / 180;
-
-    double hyp = adj / cos(rad);
-
-    printf("Hypotenuse = %.2lf", hyp);
+    printf("arcsin = %.2lf", asin(x) * 180 / M_PI);
 
     return 0;
 }
