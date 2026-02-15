@@ -1949,20 +1949,37 @@ int main() {
 
 //convert degree to radians
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main() {
+//     double deg, rad;
+
+//     scanf("%lf", &deg);
+//     rad = deg * M_PI / 180;
+//     printf("Radians = %.2lf\n", rad);
+
+//     scanf("%lf", &rad);
+//     deg = rad * 180 / M_PI;
+//     printf("Degrees = %.2lf", deg);
+
+//     return 0;
+// }
+
+//Trignometric table
+
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double deg, rad;
+    int i;
+    double rad;
 
-    scanf("%lf", &deg);
-    rad = deg * M_PI / 180;
-    printf("Radians = %.2lf\n", rad);
-
-    scanf("%lf", &rad);
-    deg = rad * 180 / M_PI;
-    printf("Degrees = %.2lf", deg);
-
+    printf("Angle  Sin   Cos\n");
+    for(i = 0; i <= 90; i += 30) {
+        rad = i * M_PI / 180;
+        printf("%3d   %.2lf  %.2lf\n", i, sin(rad), cos(rad));
+    }
     return 0;
 }
 
