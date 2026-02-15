@@ -57,14 +57,14 @@
 
 //Inverse trignometric 
 
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 
-int main() {
-    double x;
-    scanf("%lf", &x);
+// int main() {
+//     double x;
+//     scanf("%lf", &x);
 
-    printf("arcsin = %.2lf", asin(x) * 180 / M_PI);
+//     printf("arcsin = %.2lf", asin(x) * 180 / M_PI);
 
-    return 0;
-}
+//     return 0;
+// }

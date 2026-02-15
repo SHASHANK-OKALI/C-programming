@@ -18,20 +18,53 @@ struct Queue {
 struct Student *head = NULL;
 struct Queue *front = NULL, *rear = NULL;
 
+/* ---------- Utility Functions ---------- */
+
+void clearInputBuffer() {
+    while(getchar() != '\n');
+}
+
+struct Student* findStudentById(int id) {
+    struct Student *temp = head;
+    while(temp != NULL) {
+        if(temp->id == id)
+            return temp;
+        temp = temp->next;
+    }
+    return NULL;
+}
+
+/* ---------- Student Functions ---------- */
+
 void addStudent() {
     struct Student *newNode = (struct Student*)malloc(sizeof(struct Student));
 
+    if(newNode == NULL) {
+        printf("Memory allocation failed!\n");
+        return;
+    }
+
     printf("Enter ID: ");
     scanf("%d", &newNode->id);
+    clearInputBuffer();
+
+    if(findStudentById(newNode->id) != NULL) {
+        printf("Student ID already exists!\n");
+        free(newNode);
+        return;
+    }
 
     printf("Enter Name: ");
-    scanf("%s", newNode->name);
+    fgets(newNode->name, sizeof(newNode->name), stdin);
+    newNode->name[strcspn(newNode->name, "\n")] = 0;
 
     printf("Enter CGPA: ");
     scanf("%f", &newNode->cgpa);
+    clearInputBuffer();
 
     printf("Enter Skill: ");
-    scanf("%s", newNode->skill);
+    fgets(newNode->skill, sizeof(newNode->skill), stdin);
+    newNode->skill[strcspn(newNode->skill, "\n")] = 0;
 
     newNode->next = head;
     head = newNode;
@@ -49,42 +82,37 @@ void displayStudents() {
 
     printf("\n--- Student Records ---\n");
     while(temp != NULL) {
-        printf("\nID: %d", temp->id);
-        printf("\nName: %s", temp->name);
-        printf("\nCGPA: %.2f", temp->cgpa);
-        printf("\nSkill: %s\n", temp->skill);
+        printf("\nID    : %d", temp->id);
+        printf("\nName  : %s", temp->name);
+        printf("\nCGPA  : %.2f", temp->cgpa);
+        printf("\nSkill : %s\n", temp->skill);
 
         temp = temp->next;
     }
 }
 
 void sortByCGPA() {
-    if(head == NULL) return;
+    if(head == NULL) {
+        printf("No records to sort.\n");
+        return;
+    }
 
     struct Student *i, *j;
     for(i = head; i != NULL; i = i->next) {
         for(j = i->next; j != NULL; j = j->next) {
             if(i->cgpa < j->cgpa) {
-                
-                int id = i->id;
-                char name[50], skill[30];
-                float cgpa = i->cgpa;
 
-                strcpy(name, i->name);
-                strcpy(skill, i->skill);
+                struct Student temp = *i;
+                *i = *j;
+                *j = temp;
 
-                i->id = j->id;
-                i->cgpa = j->cgpa;
-                strcpy(i->name, j->name);
-                strcpy(i->skill, j->skill);
-
-                j->id = id;
-                j->cgpa = cgpa;
-                strcpy(j->name, name);
-                strcpy(j->skill, skill);
+                struct Student *swapNext = i->next;
+                i->next = j->next;
+                j->next = swapNext;
             }
         }
     }
+
     printf("Students Sorted by CGPA (Descending)\n");
 }
 
@@ -109,12 +137,25 @@ void checkEligibility() {
         printf("No eligible students found.\n");
 }
 
+/* ---------- Queue Functions ---------- */
+
 void enqueue() {
     int id;
     printf("Enter Student ID to Enqueue: ");
     scanf("%d", &id);
 
+    if(findStudentById(id) == NULL) {
+        printf("Student ID not found!\n");
+        return;
+    }
+
     struct Queue *newNode = (struct Queue*)malloc(sizeof(struct Queue));
+
+    if(newNode == NULL) {
+        printf("Memory allocation failed!\n");
+        return;
+    }
+
     newNode->studentId = id;
     newNode->next = NULL;
 
@@ -135,7 +176,7 @@ void dequeue() {
     }
 
     struct Queue *temp = front;
-    printf(" Interviewing Student ID: %d\n", temp->studentId);
+    printf("Interviewing Student ID: %d\n", temp->studentId);
 
     front = front->next;
     if(front == NULL)
@@ -158,6 +199,26 @@ void displayQueue() {
         temp = temp->next;
     }
 }
+
+/* ---------- Memory Cleanup ---------- */
+
+void freeAllMemory() {
+    struct Student *sTemp;
+    while(head != NULL) {
+        sTemp = head;
+        head = head->next;
+        free(sTemp);
+    }
+
+    struct Queue *qTemp;
+    while(front != NULL) {
+        qTemp = front;
+        front = front->next;
+        free(qTemp);
+    }
+}
+
+/* ---------- Main ---------- */
 
 int main() {
     int choice;
@@ -184,10 +245,12 @@ int main() {
             case 5: enqueue(); break;
             case 6: dequeue(); break;
             case 7: displayQueue(); break;
-            case 0: 
-                printf(" Exiting Program...\n");
+            case 0:
+                freeAllMemory();
+                printf("Exiting Program...\n");
                 return 0;
-            default: printf("Invalid Choice\n");
+            default:
+                printf("Invalid Choice\n");
         }
     }
 }
