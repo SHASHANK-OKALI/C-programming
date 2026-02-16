@@ -1985,6 +1985,26 @@ int main() {
 
 //Numerical differentiation
 
+// #include <stdio.h>
+// #include <math.h>
+
+// double f(double x) {
+//     return x*x;   // Example: f(x) = x^2
+// }
+
+// int main() {
+//     double x, h;
+//     scanf("%lf %lf", &x, &h);
+
+//     double derivative = (f(x + h) - f(x)) / h;
+//     printf("Derivative = %.4lf", derivative);
+
+//     return 0;
+// }
+
+
+//Numerical intergration
+
 #include <stdio.h>
 #include <math.h>
 
@@ -1993,11 +2013,13 @@ double f(double x) {
 }
 
 int main() {
-    double x, h;
-    scanf("%lf %lf", &x, &h);
+    double a, b;
+    scanf("%lf %lf", &a, &b);
 
-    double derivative = (f(x + h) - f(x)) / h;
-    printf("Derivative = %.4lf", derivative);
+    double h = b - a;
+    double integral = (h / 2) * (f(a) + f(b));
+
+    printf("Integral = %.4lf", integral);
 
     return 0;
 }
