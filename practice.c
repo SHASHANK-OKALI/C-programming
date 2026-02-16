@@ -1968,18 +1968,37 @@ int main() {
 
 //Trignometric table
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main() {
+//     int i;
+//     double rad;
+
+//     printf("Angle  Sin   Cos\n");
+//     for(i = 0; i <= 90; i += 30) {
+//         rad = i * M_PI / 180;
+//         printf("%3d   %.2lf  %.2lf\n", i, sin(rad), cos(rad));
+//     }
+//     return 0;
+// }
+
+//Numerical differentiation
+
 #include <stdio.h>
 #include <math.h>
 
-int main() {
-    int i;
-    double rad;
+double f(double x) {
+    return x*x;   // Example: f(x) = x^2
+}
 
-    printf("Angle  Sin   Cos\n");
-    for(i = 0; i <= 90; i += 30) {
-        rad = i * M_PI / 180;
-        printf("%3d   %.2lf  %.2lf\n", i, sin(rad), cos(rad));
-    }
+int main() {
+    double x, h;
+    scanf("%lf %lf", &x, &h);
+
+    double derivative = (f(x + h) - f(x)) / h;
+    printf("Derivative = %.4lf", derivative);
+
     return 0;
 }
 
