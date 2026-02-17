@@ -2027,17 +2027,38 @@ int main() {
 
 //partial derivaties
 
+// #include <stdio.h>
+
+// int main() {
+//     double x, y;
+//     scanf("%lf %lf", &x, &y);
+
+//     double dfdx = 2 * x;
+//     double dfdy = 2 * y;
+
+//     printf("df/dx = %.2lf\n", dfdx);
+//     printf("df/dy = %.2lf", dfdy);
+
+//     return 0;
+// }
+
+//simpson's 1/3 rule
+
 #include <stdio.h>
+#include <math.h>
+
+double f(double x) {
+    return x*x;   // f(x) = x^2
+}
 
 int main() {
-    double x, y;
-    scanf("%lf %lf", &x, &y);
+    double a, b;
+    scanf("%lf %lf", &a, &b);
 
-    double dfdx = 2 * x;
-    double dfdy = 2 * y;
+    double h = (b - a) / 2;
+    double integral = (h / 3) * (f(a) + 4*f(a + h) + f(b));
 
-    printf("df/dx = %.2lf\n", dfdx);
-    printf("df/dy = %.2lf", dfdy);
+    printf("Integral = %.4lf", integral);
 
     return 0;
 }
