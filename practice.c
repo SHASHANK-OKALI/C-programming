@@ -2005,21 +2005,39 @@ int main() {
 
 //Numerical intergration
 
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 
-double f(double x) {
-    return x*x;   // Example: f(x) = x^2
-}
+// double f(double x) {
+//     return x*x;   // Example: f(x) = x^2
+// }
+
+// int main() {
+//     double a, b;
+//     scanf("%lf %lf", &a, &b);
+
+//     double h = b - a;
+//     double integral = (h / 2) * (f(a) + f(b));
+
+//     printf("Integral = %.4lf", integral);
+
+//     return 0;
+// }
+
+
+//partial derivaties
+
+#include <stdio.h>
 
 int main() {
-    double a, b;
-    scanf("%lf %lf", &a, &b);
+    double x, y;
+    scanf("%lf %lf", &x, &y);
 
-    double h = b - a;
-    double integral = (h / 2) * (f(a) + f(b));
+    double dfdx = 2 * x;
+    double dfdy = 2 * y;
 
-    printf("Integral = %.4lf", integral);
+    printf("df/dx = %.2lf\n", dfdx);
+    printf("df/dy = %.2lf", dfdy);
 
     return 0;
 }
