@@ -2044,19 +2044,41 @@ int main() {
 
 //simpson's 1/3 rule
 
+// #include <stdio.h>
+// #include <math.h>
+
+// double f(double x) {
+//     return x*x;   // f(x) = x^2
+// }
+
+// int main() {
+//     double a, b;
+//     scanf("%lf %lf", &a, &b);
+
+//     double h = (b - a) / 2;
+//     double integral = (h / 3) * (f(a) + 4*f(a + h) + f(b));
+
+//     printf("Integral = %.4lf", integral);
+
+//     return 0;
+// }
+
+
+//Numerical intergration
+
 #include <stdio.h>
 #include <math.h>
 
 double f(double x) {
-    return x*x;   // f(x) = x^2
+    return x*x;   // Example: f(x) = x^2
 }
 
 int main() {
     double a, b;
     scanf("%lf %lf", &a, &b);
 
-    double h = (b - a) / 2;
-    double integral = (h / 3) * (f(a) + 4*f(a + h) + f(b));
+    double h = b - a;
+    double integral = (h / 2) * (f(a) + f(b));
 
     printf("Integral = %.4lf", integral);
 
