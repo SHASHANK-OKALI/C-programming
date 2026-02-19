@@ -2281,58 +2281,122 @@ int main() {
 
 //merge sort
 
-#include<stdio.h>
+// #include<stdio.h>
 
-void merge(int arr[],int left,int right,int mid)
-{
-    int i=left,j=mid+1,k=0;
-    int temp[50];
-    while (i<=mid && j<=right)
-    {
-       if(arr[i]<arr[j])
-       temp[k++]=arr[i++];
-       else
-       temp[k++]=arr[j++];
-    }
-    while(i<=mid)
-    temp[k++]=arr[i++];
-    while(j<=right)
-    temp[k++]=arr[j++];
-    for(i=left,k=0; i<=right; i++,k++)
-    arr[i]=temp[k];
+// void merge(int arr[],int left,int right,int mid)
+// {
+//     int i=left,j=mid+1,k=0;
+//     int temp[50];
+//     while (i<=mid && j<=right)
+//     {
+//        if(arr[i]<arr[j])
+//        temp[k++]=arr[i++];
+//        else
+//        temp[k++]=arr[j++];
+//     }
+//     while(i<=mid)
+//     temp[k++]=arr[i++];
+//     while(j<=right)
+//     temp[k++]=arr[j++];
+//     for(i=left,k=0; i<=right; i++,k++)
+//     arr[i]=temp[k];
     
+// }
+
+// void mergesort(int arr[],int left,int right)
+// {
+//     if(left<right)
+//     {
+//         int mid = (left+right)/2;
+//         mergesort(arr,mid-1,left);
+//         mergesort(arr,mid+1,right);
+//         merge(arr,left,right,mid);
+//     }
+// }
+
+// int main()
+// {
+//     int arr[50],n;
+//     printf("Enter number of elements:\n");
+//     scanf("%d",&n);
+
+//     printf("Enter %d elements : \n",n);
+//     for(int i=0; i<n; i++)
+//     {
+//         scanf("%d",&arr[i]);
+//     }
+//     mergesort(arr,0,n-1);
+//     printf("sorted array is :\n");
+//     for(int i=0; i<n; i++)
+//     {
+//         printf("%d",arr[i]);
+//     }
+//     return 0;
+
+// }
+
+//display and count
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Node{
+    int data;
+    struct Node * next;
+};
+
+void displayNodes(struct Node * head)
+{
+    printf("Linked list nodes:");
+    while(head!=NULL)
+    {
+        printf("%d",head->data);
+        head=head->next;
+    }
 }
 
-void mergesort(int arr[],int left,int right)
+int countNodes(struct Node * head)
 {
-    if(left<right)
+    int count =0;
+    while(head!=NULL)
     {
-        int mid = (left+right)/2;
-        mergesort(arr,mid-1,left);
-        mergesort(arr,mid+1,right);
-        merge(arr,left,right,mid);
+        count++;
+        head=head->next;
     }
+    return count;
 }
 
 int main()
 {
-    int arr[50],n;
-    printf("Enter number of elements:\n");
-    scanf("%d",&n);
+    struct Node * head = NULL;
 
-    printf("Enter %d elements : \n",n);
-    for(int i=0; i<n; i++)
+    head = (struct Node*)malloc(sizeof(struct Node));
+    head->data=1;
+    head->next=NULL;
+
+    struct Node * second = (struct Node*)malloc(sizeof(struct Node));
+    second->data=2;
+    second->next=NULL;
+    head->next=second;
+
+    struct Node * third = (struct Node*)malloc(sizeof(struct Node));
+    third->data=3;
+    third->next=NULL;
+    second->next=third;
+
+    displayNodes(head);
+
+    int nodeCount = countNodes(head);
+    printf("Number of nodes in linked list: %d\n",nodeCount);
+
+
+    while(head!=NULL)
     {
-        scanf("%d",&arr[i]);
-    }
-    mergesort(arr,0,n-1);
-    printf("sorted array is :\n");
-    for(int i=0; i<n; i++)
-    {
-        printf("%d",arr[i]);
+        struct  Node * temp = head;
+        head = head->next;
+        free(temp);
     }
     return 0;
-
 }
 
 
