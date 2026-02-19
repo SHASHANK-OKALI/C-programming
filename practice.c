@@ -2066,24 +2066,97 @@ int main() {
 
 //Numerical intergration
 
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 
-double f(double x) {
-    return x*x;   // Example: f(x) = x^2
+// double f(double x) {
+//     return x*x;  
+// }
+
+// int main() {
+//     double a, b;
+//     scanf("%lf %lf", &a, &b);
+
+//     double h = b - a;
+//     double integral = (h / 2) * (f(a) + f(b));
+
+//     printf("Integral = %.4lf", integral);
+
+//     return 0;
+// }
+
+
+//LSBS
+
+
+#include<stdio.h>
+int main()
+{
+    int i,n,key,choice;
+    printf("Enter number of elements : \n");
+    scanf("%d",&n);
+
+    int arr[n];
+
+    printf("Enter %d elements:\n",n);
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+
+    printf("-----search choice-----");
+    printf("1.Linear search");
+    printf("2.Binary search");
+    printf("Enter your choice:");
+    scanf("%d",&choice);
+    printf("Enter element  to serach :");
+    scanf("%d",&key);
+
+    if(choice==1)
+    {
+        for(i=0; i<n; i++)
+        {
+            if(arr[i]==key)
+            {
+                printf("Element found at position %d",i+1);
+                return 0;
+            }
+        }
+        printf("Element not found");
+    }
+
+
+else if(choice==2)
+{
+    int low=0,high=n-1,mid;
+    while(low<=high)
+    {
+        mid=(low+high)/2;
+        if(arr[mid]==key)
+        {
+            printf("element found at position %d",mid+1);
+            return 0;
+        }
+    else if(arr[mid]<key)
+    {
+        low=mid+1;
+    }
+    else
+    {
+       high=mid-1;
+    }
+ }
+ printf("element not found");
+}
+ else
+ {
+    printf("invalid choice");
+ }
+ return 0;
+ 
 }
 
-int main() {
-    double a, b;
-    scanf("%lf %lf", &a, &b);
 
-    double h = b - a;
-    double integral = (h / 2) * (f(a) + f(b));
-
-    printf("Integral = %.4lf", integral);
-
-    return 0;
-}
 
 
 
