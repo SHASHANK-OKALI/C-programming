@@ -2337,67 +2337,215 @@ int main() {
 
 //display and count
 
-#include<stdio.h>
-#include<stdlib.h>
+// #include<stdio.h>
+// #include<stdlib.h>
 
-struct Node{
-    int data;
-    struct Node * next;
-};
+// struct Node{
+//     int data;
+//     struct Node * next;
+// };
 
-void displayNodes(struct Node * head)
-{
-    printf("Linked list nodes:");
-    while(head!=NULL)
-    {
-        printf("%d",head->data);
-        head=head->next;
-    }
-}
+// void displayNodes(struct Node * head)
+// {
+//     printf("Linked list nodes:");
+//     while(head!=NULL)
+//     {
+//         printf("%d",head->data);
+//         head=head->next;
+//     }
+// }
 
-int countNodes(struct Node * head)
-{
-    int count =0;
-    while(head!=NULL)
-    {
-        count++;
-        head=head->next;
-    }
-    return count;
-}
+// int countNodes(struct Node * head)
+// {
+//     int count =0;
+//     while(head!=NULL)
+//     {
+//         count++;
+//         head=head->next;
+//     }
+//     return count;
+// }
 
-int main()
-{
-    struct Node * head = NULL;
+// int main()
+// {
+//     struct Node * head = NULL;
 
-    head = (struct Node*)malloc(sizeof(struct Node));
-    head->data=1;
-    head->next=NULL;
+//     head = (struct Node*)malloc(sizeof(struct Node));
+//     head->data=1;
+//     head->next=NULL;
 
-    struct Node * second = (struct Node*)malloc(sizeof(struct Node));
-    second->data=2;
-    second->next=NULL;
-    head->next=second;
+//     struct Node * second = (struct Node*)malloc(sizeof(struct Node));
+//     second->data=2;
+//     second->next=NULL;
+//     head->next=second;
 
-    struct Node * third = (struct Node*)malloc(sizeof(struct Node));
-    third->data=3;
-    third->next=NULL;
-    second->next=third;
+//     struct Node * third = (struct Node*)malloc(sizeof(struct Node));
+//     third->data=3;
+//     third->next=NULL;
+//     second->next=third;
 
-    displayNodes(head);
+//     displayNodes(head);
 
-    int nodeCount = countNodes(head);
-    printf("Number of nodes in linked list: %d\n",nodeCount);
+//     int nodeCount = countNodes(head);
+//     printf("Number of nodes in linked list: %d\n",nodeCount);
 
 
-    while(head!=NULL)
-    {
-        struct  Node * temp = head;
-        head = head->next;
-        free(temp);
-    }
+//     while(head!=NULL)
+//     {
+//         struct  Node * temp = head;
+//         head = head->next;
+//         free(temp);
+//     }
+//     return 0;
+// }
+
+
+//binary inorder preorder postorder
+
+
+// #include<stdio.h>
+// #include<stdlib.h>
+
+// struct Node{
+//     int data;
+//     struct Node* left;
+//     struct Node* right;
+// };
+
+// struct Node* createNode(int data)
+// {
+//     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+//     newNode->data=data;
+//     newNode->left=NULL;
+//     newNode->right=NULL;
+//     return newNode;
+// }
+
+// struct Node* insert(struct Node* root,int data)
+// {
+//     if(root==NULL)
+//     {
+//         return createNode(data);
+        
+//     }
+
+//         if(data<root->data)
+//         {
+//             root->left=insert(root->left,data);
+//         }
+//         else if(data>root->data)
+//         {
+//             root->right=insert(root->right,data);
+//         }
+    
+//     return root;
+// }
+
+// void inorderTraversal(struct Node* root)
+// {
+//     if(root!=NULL)
+//     {
+//     inorderTraversal(root->left);
+//     printf("%d ",root->data);
+//     inorderTraversal(root->right);
+//     }
+// }
+
+// void preorderTraversal(struct Node* root)
+// {
+//     if(root!=NULL)
+//     {
+//     printf("%d ",root->data);
+//     preorderTraversal(root->left);
+//     preorderTraversal(root->right);
+//     }
+// }
+
+// void postorderTraversal(struct Node* root)
+// {
+    
+//     if(root!=NULL)
+//     {
+//     postorderTraversal(root->left);
+//     postorderTraversal(root->right);
+//     printf("%d ",root->data);
+//     }
+// }
+
+// void displayMenu()
+// {
+//     printf("\n----Menu----\n");
+//     printf("1.Insert node\n");
+//     printf("2.inordertraversal\n");
+//     printf("3.preordertraversal\n");
+//     printf("4.postordertraversal\n");
+//     printf("5.Exit\n");
+
+// }
+
+// int main()
+// {
+//     struct Node* root = NULL;
+//     int choice,data;
+
+//     do{
+//         displayMenu();
+//         printf("Enter your choice:");
+//         scanf("%d",&choice);
+
+//         switch(choice)
+//         {
+//             case 1:
+//             printf("Enter data to insert");
+//             scanf("%d",&data);
+//             root = insert(root,data);
+//             break;
+
+//             case 2:
+//             printf("inorderTraversal");
+//             inorderTraversal(root);
+//             printf("\n");
+//             break;
+
+//             case 3:
+//             printf("preorderTraversal");
+//             preorderTraversal(root);
+//             printf("\n");
+//             break;
+
+//             case 4:
+//             printf("postorderTraversal");
+//             postorderTraversal(root);
+//             printf("\n");
+//             break;
+
+//             case 5:
+//             printf("Exit\n");
+//             break;
+
+//         }
+        
+//     }
+//     while(choice!=5);
+//     return 0;
+// }
+
+
+//simple interest
+
+#include <stdio.h>
+int main() {
+    float p, r, t, si;
+    scanf("%f %f %f", &p, &r, &t);
+    si = (p * r * t) / 100;
+    printf("Simple Interest = %.2f", si);
     return 0;
 }
+
+
+
+
+
 
 
 
