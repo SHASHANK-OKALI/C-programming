@@ -2533,15 +2533,28 @@ int main() {
 
 //simple interest
 
+// #include <stdio.h>
+// int main() {
+//     float p, r, t, si;
+//     scanf("%f %f %f", &p, &r, &t);
+//     si = (p * r * t) / 100;
+//     printf("Simple Interest = %.2f", si);
+//     return 0;
+// }
+
+
+//compound interest
+
 #include <stdio.h>
+#include <math.h>
 int main() {
-    float p, r, t, si;
+    float p, r, t, ci, amount;
     scanf("%f %f %f", &p, &r, &t);
-    si = (p * r * t) / 100;
-    printf("Simple Interest = %.2f", si);
+    amount = p * pow(1 + r/100, t);
+    ci = amount - p;
+    printf("Compound Interest = %.2f", ci);
     return 0;
 }
-
 
 
 
