@@ -2545,14 +2545,26 @@ int main() {
 
 //compound interest
 
+// #include <stdio.h>
+// #include <math.h>
+// int main() {
+//     float p, r, t, ci, amount;
+//     scanf("%f %f %f", &p, &r, &t);
+//     amount = p * pow(1 + r/100, t);
+//     ci = amount - p;
+//     printf("Compound Interest = %.2f", ci);
+//     return 0;
+// }
+
+
+//currency conversion
+
 #include <stdio.h>
-#include <math.h>
 int main() {
-    float p, r, t, ci, amount;
-    scanf("%f %f %f", &p, &r, &t);
-    amount = p * pow(1 + r/100, t);
-    ci = amount - p;
-    printf("Compound Interest = %.2f", ci);
+    float inr, usd;
+    scanf("%f", &inr);
+    usd = inr / 83.0;  // Example rate
+    printf("USD = %.2f", usd);
     return 0;
 }
 
