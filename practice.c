@@ -2559,12 +2559,23 @@ int main() {
 
 //currency conversion
 
+// #include <stdio.h>
+// int main() {
+//     float inr, usd;
+//     scanf("%f", &inr);
+//     usd = inr / 83.0;  // Example rate
+//     printf("USD = %.2f", usd);
+//     return 0;
+// }
+
+//Break even point 
+
 #include <stdio.h>
 int main() {
-    float inr, usd;
-    scanf("%f", &inr);
-    usd = inr / 83.0;  // Example rate
-    printf("USD = %.2f", usd);
+    float fixedCost, price, variableCost, bep;
+    scanf("%f %f %f", &fixedCost, &price, &variableCost);
+    bep = fixedCost / (price - variableCost);
+    printf("Break-even Units = %.2f", bep);
     return 0;
 }
 
