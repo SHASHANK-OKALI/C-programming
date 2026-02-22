@@ -2570,12 +2570,25 @@ int main() {
 
 //Break even point 
 
+// #include <stdio.h>
+// int main() {
+//     float fixedCost, price, variableCost, bep;
+//     scanf("%f %f %f", &fixedCost, &price, &variableCost);
+//     bep = fixedCost / (price - variableCost);
+//     printf("Break-even Units = %.2f", bep);
+//     return 0;
+// }
+
+//salary calculation
+
 #include <stdio.h>
 int main() {
-    float fixedCost, price, variableCost, bep;
-    scanf("%f %f %f", &fixedCost, &price, &variableCost);
-    bep = fixedCost / (price - variableCost);
-    printf("Break-even Units = %.2f", bep);
+    float basic, hra, da, gross;
+    scanf("%f", &basic);
+    hra = basic * 0.20;
+    da  = basic * 0.10;
+    gross = basic + hra + da;
+    printf("Gross Salary = %.2f", gross);
     return 0;
 }
 
