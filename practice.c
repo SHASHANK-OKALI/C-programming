@@ -2581,14 +2581,25 @@ int main() {
 
 //salary calculation
 
+// #include <stdio.h>
+// int main() {
+//     float basic, hra, da, gross;
+//     scanf("%f", &basic);
+//     hra = basic * 0.20;
+//     da  = basic * 0.10;
+//     gross = basic + hra + da;
+//     printf("Gross Salary = %.2f", gross);
+//     return 0;
+// }
+
+//GST calculation
+
 #include <stdio.h>
 int main() {
-    float basic, hra, da, gross;
-    scanf("%f", &basic);
-    hra = basic * 0.20;
-    da  = basic * 0.10;
-    gross = basic + hra + da;
-    printf("Gross Salary = %.2f", gross);
+    float price, gst, total;
+    scanf("%f %f", &price, &gst);
+    total = price + (price * gst / 100);
+    printf("Total Amount = %.2f", total);
     return 0;
 }
 
