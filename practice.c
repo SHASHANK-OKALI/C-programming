@@ -2594,6 +2594,16 @@ int main() {
 
 //GST calculation
 
+// #include <stdio.h>
+// int main() {
+//     float price, gst, total;
+//     scanf("%f %f", &price, &gst);
+//     total = price + (price * gst / 100);
+//     printf("Total Amount = %.2f", total);
+//     return 0;
+// }
+
+
 #include <stdio.h>
 int main() {
     float price, gst, total;
