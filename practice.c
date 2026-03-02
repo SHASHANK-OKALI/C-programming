@@ -2604,15 +2604,39 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+// int main() {
+//     float price, gst, total;
+//     scanf("%f %f", &price, &gst);
+//     total = price + (price * gst / 100);
+//     printf("Total Amount = %.2f", total);
+//     return 0;
+// }
+
+
 #include <stdio.h>
+#include <math.h>
+
 int main() {
-    float price, gst, total;
-    scanf("%f %f", &price, &gst);
-    total = price + (price * gst / 100);
-    printf("Total Amount = %.2f", total);
+    int n, i;
+    float a[100], mean = 0, sd = 0;
+
+    scanf("%d", &n);
+    for(i = 0; i < n; i++) {
+        scanf("%f", &a[i]);
+        mean += a[i];
+    }
+
+    mean /= n;
+
+    for(i = 0; i < n; i++)
+        sd += (a[i] - mean) * (a[i] - mean);
+
+    sd = sqrt(sd / n);
+
+    printf("Standard Deviation = %.2f", sd);
     return 0;
 }
-
 
 
 
