@@ -2614,27 +2614,43 @@ int main() {
 // }
 
 
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 
+// int main() {
+//     int n, i;
+//     float a[100], mean = 0, sd = 0;
+
+//     scanf("%d", &n);
+//     for(i = 0; i < n; i++) {
+//         scanf("%f", &a[i]);
+//         mean += a[i];
+//     }
+
+//     mean /= n;
+
+//     for(i = 0; i < n; i++)
+//         sd += (a[i] - mean) * (a[i] - mean);
+
+//     sd = sqrt(sd / n);
+
+//     printf("Standard Deviation = %.2f", sd);
+//     return 0;
+// }
+
+
+#include <stdio.h>
 int main() {
     int n, i;
-    float a[100], mean = 0, sd = 0;
+    float sum = 0, a[100];
 
     scanf("%d", &n);
     for(i = 0; i < n; i++) {
         scanf("%f", &a[i]);
-        mean += a[i];
+        sum += a[i];
     }
 
-    mean /= n;
-
-    for(i = 0; i < n; i++)
-        sd += (a[i] - mean) * (a[i] - mean);
-
-    sd = sqrt(sd / n);
-
-    printf("Standard Deviation = %.2f", sd);
+    printf("Mean = %.2f", sum / n);
     return 0;
 }
 
