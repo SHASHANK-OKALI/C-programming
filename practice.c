@@ -2657,31 +2657,58 @@ int main() {
 
 //frequency of each number with array
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[100], freq[100];
+//     int n, i, j, count;
+
+//     scanf("%d", &n);
+
+//     for(i = 0; i < n; i++)
+//         scanf("%d", &a[i]);
+
+//     for(i = 0; i < n; i++) {
+//         count = 1;
+
+//         if(a[i] == -1)
+//             continue;
+
+//         for(j = i + 1; j < n; j++) {
+//             if(a[i] == a[j]) {
+//                 count++;
+//                 a[j] = -1;
+//             }
+//         }
+
+//         printf("%d occurs %d times\n", a[i], count);
+//     }
+
+//     return 0;
+// }
+
+
+//Frequency distribution table
+
 #include <stdio.h>
 
 int main() {
-    int a[100], freq[100];
-    int n, i, j, count;
+    int a[100], freq[100] = {0};
+    int n, i;
 
     scanf("%d", &n);
 
     for(i = 0; i < n; i++)
         scanf("%d", &a[i]);
 
-    for(i = 0; i < n; i++) {
-        count = 1;
+    for(i = 0; i < n; i++)
+        freq[a[i]]++;
 
-        if(a[i] == -1)
-            continue;
+    printf("Value  Frequency\n");
 
-        for(j = i + 1; j < n; j++) {
-            if(a[i] == a[j]) {
-                count++;
-                a[j] = -1;
-            }
-        }
-
-        printf("%d occurs %d times\n", a[i], count);
+    for(i = 0; i < 100; i++) {
+        if(freq[i] != 0)
+            printf("%d      %d\n", i, freq[i]);
     }
 
     return 0;
