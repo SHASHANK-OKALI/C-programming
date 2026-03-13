@@ -2639,21 +2639,53 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+// int main() {
+//     int n, i;
+//     float sum = 0, a[100];
+
+//     scanf("%d", &n);
+//     for(i = 0; i < n; i++) {
+//         scanf("%f", &a[i]);
+//         sum += a[i];
+//     }
+
+//     printf("Mean = %.2f", sum / n);
+//     return 0;
+// }
+
+
+//frequency of each number with array
+
 #include <stdio.h>
+
 int main() {
-    int n, i;
-    float sum = 0, a[100];
+    int a[100], freq[100];
+    int n, i, j, count;
 
     scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
     for(i = 0; i < n; i++) {
-        scanf("%f", &a[i]);
-        sum += a[i];
+        count = 1;
+
+        if(a[i] == -1)
+            continue;
+
+        for(j = i + 1; j < n; j++) {
+            if(a[i] == a[j]) {
+                count++;
+                a[j] = -1;
+            }
+        }
+
+        printf("%d occurs %d times\n", a[i], count);
     }
 
-    printf("Mean = %.2f", sum / n);
     return 0;
 }
-
 
 
 
