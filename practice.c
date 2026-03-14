@@ -2717,33 +2717,59 @@ int main() {
 
 //grouped frequency distribution
 
+// #include <stdio.h>
+
+// int main() {
+//     int data[100], n, i;
+//     int f1=0, f2=0, f3=0, f4=0;
+
+//     scanf("%d", &n);
+
+//     for(i = 0; i < n; i++)
+//         scanf("%d", &data[i]);
+
+//     for(i = 0; i < n; i++) {
+//         if(data[i] < 10)
+//             f1++;
+//         else if(data[i] < 20)
+//             f2++;
+//         else if(data[i] < 30)
+//             f3++;
+//         else
+//             f4++;
+//     }
+
+//     printf("Class Interval  Frequency\n");
+//     printf("0-9             %d\n", f1);
+//     printf("10-19           %d\n", f2);
+//     printf("20-29           %d\n", f3);
+//     printf("30+             %d\n", f4);
+
+//     return 0;
+// }
+
+
+//cumulative frequency
+
+
 #include <stdio.h>
 
 int main() {
-    int data[100], n, i;
-    int f1=0, f2=0, f3=0, f4=0;
+    int freq[5], cum[5];
+    int i;
 
-    scanf("%d", &n);
+    for(i = 0; i < 5; i++)
+        scanf("%d", &freq[i]);
 
-    for(i = 0; i < n; i++)
-        scanf("%d", &data[i]);
+    cum[0] = freq[0];
 
-    for(i = 0; i < n; i++) {
-        if(data[i] < 10)
-            f1++;
-        else if(data[i] < 20)
-            f2++;
-        else if(data[i] < 30)
-            f3++;
-        else
-            f4++;
-    }
+    for(i = 1; i < 5; i++)
+        cum[i] = cum[i-1] + freq[i];
 
-    printf("Class Interval  Frequency\n");
-    printf("0-9             %d\n", f1);
-    printf("10-19           %d\n", f2);
-    printf("20-29           %d\n", f3);
-    printf("30+             %d\n", f4);
+    printf("Cumulative Frequency:\n");
+
+    for(i = 0; i < 5; i++)
+        printf("%d ", cum[i]);
 
     return 0;
 }
