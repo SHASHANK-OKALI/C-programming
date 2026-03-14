@@ -2690,26 +2690,60 @@ int main() {
 
 //Frequency distribution table
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[100], freq[100] = {0};
+//     int n, i;
+
+//     scanf("%d", &n);
+
+//     for(i = 0; i < n; i++)
+//         scanf("%d", &a[i]);
+
+//     for(i = 0; i < n; i++)
+//         freq[a[i]]++;
+
+//     printf("Value  Frequency\n");
+
+//     for(i = 0; i < 100; i++) {
+//         if(freq[i] != 0)
+//             printf("%d      %d\n", i, freq[i]);
+//     }
+
+//     return 0;
+// }
+
+
+//grouped frequency distribution
+
 #include <stdio.h>
 
 int main() {
-    int a[100], freq[100] = {0};
-    int n, i;
+    int data[100], n, i;
+    int f1=0, f2=0, f3=0, f4=0;
 
     scanf("%d", &n);
 
     for(i = 0; i < n; i++)
-        scanf("%d", &a[i]);
+        scanf("%d", &data[i]);
 
-    for(i = 0; i < n; i++)
-        freq[a[i]]++;
-
-    printf("Value  Frequency\n");
-
-    for(i = 0; i < 100; i++) {
-        if(freq[i] != 0)
-            printf("%d      %d\n", i, freq[i]);
+    for(i = 0; i < n; i++) {
+        if(data[i] < 10)
+            f1++;
+        else if(data[i] < 20)
+            f2++;
+        else if(data[i] < 30)
+            f3++;
+        else
+            f4++;
     }
+
+    printf("Class Interval  Frequency\n");
+    printf("0-9             %d\n", f1);
+    printf("10-19           %d\n", f2);
+    printf("20-29           %d\n", f3);
+    printf("30+             %d\n", f4);
 
     return 0;
 }
