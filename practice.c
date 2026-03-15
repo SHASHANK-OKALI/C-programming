@@ -2777,20 +2777,45 @@ int main() {
 
 //
 
+// #include <stdio.h>
+
+// int main() {
+//     int n, i;
+//     float a[100], sum = 0, mean;
+
+//     scanf("%d", &n);
+
+//     for(i = 0; i < n; i++) {
+//         scanf("%f", &a[i]);
+//         sum += a[i];
+//     }
+
+//     mean = sum / n;
+
+//     printf("Mean = %.2f", mean);
+
+//     return 0;
+// }
+
+//Mean using frequency distribution
+
+
 #include <stdio.h>
 
 int main() {
     int n, i;
-    float a[100], sum = 0, mean;
+    float x[50], f[50];
+    float sumfx = 0, sumf = 0, mean;
 
     scanf("%d", &n);
 
     for(i = 0; i < n; i++) {
-        scanf("%f", &a[i]);
-        sum += a[i];
+        scanf("%f %f", &x[i], &f[i]);
+        sumfx += x[i] * f[i];
+        sumf += f[i];
     }
 
-    mean = sum / n;
+    mean = sumfx / sumf;
 
     printf("Mean = %.2f", mean);
 
