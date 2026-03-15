@@ -2752,24 +2752,47 @@ int main() {
 //cumulative frequency
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int freq[5], cum[5];
+//     int i;
+
+//     for(i = 0; i < 5; i++)
+//         scanf("%d", &freq[i]);
+
+//     cum[0] = freq[0];
+
+//     for(i = 1; i < 5; i++)
+//         cum[i] = cum[i-1] + freq[i];
+
+//     printf("Cumulative Frequency:\n");
+
+//     for(i = 0; i < 5; i++)
+//         printf("%d ", cum[i]);
+
+//     return 0;
+// }
+
+
+//
+
 #include <stdio.h>
 
 int main() {
-    int freq[5], cum[5];
-    int i;
+    int n, i;
+    float a[100], sum = 0, mean;
 
-    for(i = 0; i < 5; i++)
-        scanf("%d", &freq[i]);
+    scanf("%d", &n);
 
-    cum[0] = freq[0];
+    for(i = 0; i < n; i++) {
+        scanf("%f", &a[i]);
+        sum += a[i];
+    }
 
-    for(i = 1; i < 5; i++)
-        cum[i] = cum[i-1] + freq[i];
+    mean = sum / n;
 
-    printf("Cumulative Frequency:\n");
-
-    for(i = 0; i < 5; i++)
-        printf("%d ", cum[i]);
+    printf("Mean = %.2f", mean);
 
     return 0;
 }
