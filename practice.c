@@ -2825,14 +2825,33 @@ int main() {
 
 //probability of an event
 
+// #include <stdio.h>
+// int main() {
+//     int favorable, total;
+//     scanf("%d %d", &favorable, &total);
+
+//     float prob = (float)favorable / total;
+
+//     printf("Probability = %.2f", prob);
+//     return 0;
+// }
+
+//Toss a coin 
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 int main() {
-    int favorable, total;
-    scanf("%d %d", &favorable, &total);
+    srand(time(0));
 
-    float prob = (float)favorable / total;
+    int toss = rand() % 2;
 
-    printf("Probability = %.2f", prob);
+    if(toss == 0)
+        printf("Head");
+    else
+        printf("Tail");
+
     return 0;
 }
 
