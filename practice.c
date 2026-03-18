@@ -2800,25 +2800,39 @@ int main() {
 //Mean using frequency distribution
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int n, i;
+//     float x[50], f[50];
+//     float sumfx = 0, sumf = 0, mean;
+
+//     scanf("%d", &n);
+
+//     for(i = 0; i < n; i++) {
+//         scanf("%f %f", &x[i], &f[i]);
+//         sumfx += x[i] * f[i];
+//         sumf += f[i];
+//     }
+
+//     mean = sumfx / sumf;
+
+//     printf("Mean = %.2f", mean);
+
+//     return 0;
+// }
+
+
+//probability of an event
+
 #include <stdio.h>
-
 int main() {
-    int n, i;
-    float x[50], f[50];
-    float sumfx = 0, sumf = 0, mean;
+    int favorable, total;
+    scanf("%d %d", &favorable, &total);
 
-    scanf("%d", &n);
+    float prob = (float)favorable / total;
 
-    for(i = 0; i < n; i++) {
-        scanf("%f %f", &x[i], &f[i]);
-        sumfx += x[i] * f[i];
-        sumf += f[i];
-    }
-
-    mean = sumfx / sumf;
-
-    printf("Mean = %.2f", mean);
-
+    printf("Probability = %.2f", prob);
     return 0;
 }
 
