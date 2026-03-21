@@ -2838,19 +2838,48 @@ int main() {
 
 //Toss a coin 
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <time.h>
+
+// int main() {
+//     srand(time(0));
+
+//     int toss = rand() % 2;
+
+//     if(toss == 0)
+//         printf("Head");
+//     else
+//         printf("Tail");
+
+//     return 0;
+// }
+
+
+//Binomial probability
+
+
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <math.h>
+
+int fact(int n) {
+    int i, f = 1;
+    for(i = 1; i <= n; i++)
+        f *= i;
+    return f;
+}
 
 int main() {
-    srand(time(0));
+    int n, x;
+    float p;
 
-    int toss = rand() % 2;
+    scanf("%d %d %f", &n, &x, &p);
 
-    if(toss == 0)
-        printf("Head");
-    else
-        printf("Tail");
+    float ncr = fact(n) / (fact(x) * fact(n - x));
+
+    float result = ncr * pow(p, x) * pow(1 - p, n - x);
+
+    printf("Probability = %.4f", result);
 
     return 0;
 }
