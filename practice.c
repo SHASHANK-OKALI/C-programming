@@ -2859,27 +2859,48 @@ int main() {
 //Binomial probability
 
 
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 
-int fact(int n) {
-    int i, f = 1;
-    for(i = 1; i <= n; i++)
-        f *= i;
-    return f;
-}
+// int fact(int n) {
+//     int i, f = 1;
+//     for(i = 1; i <= n; i++)
+//         f *= i;
+//     return f;
+// }
+
+// int main() {
+//     int n, x;
+//     float p;
+
+//     scanf("%d %d %f", &n, &x, &p);
+
+//     float ncr = fact(n) / (fact(x) * fact(n - x));
+
+//     float result = ncr * pow(p, x) * pow(1 - p, n - x);
+
+//     printf("Probability = %.4f", result);
+
+//     return 0;
+// }
+
+
+//Expected value
+
+#include <stdio.h>
 
 int main() {
-    int n, x;
-    float p;
+    int n, i;
+    float x[50], p[50], ex = 0;
 
-    scanf("%d %d %f", &n, &x, &p);
+    scanf("%d", &n);
 
-    float ncr = fact(n) / (fact(x) * fact(n - x));
+    for(i = 0; i < n; i++) {
+        scanf("%f %f", &x[i], &p[i]);
+        ex += x[i] * p[i];
+    }
 
-    float result = ncr * pow(p, x) * pow(1 - p, n - x);
-
-    printf("Probability = %.4f", result);
+    printf("Expected Value = %.2f", ex);
 
     return 0;
 }
