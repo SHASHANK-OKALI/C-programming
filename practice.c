@@ -2887,20 +2887,37 @@ int main() {
 
 //Expected value
 
+// #include <stdio.h>
+
+// int main() {
+//     int n, i;
+//     float x[50], p[50], ex = 0;
+
+//     scanf("%d", &n);
+
+//     for(i = 0; i < n; i++) {
+//         scanf("%f %f", &x[i], &p[i]);
+//         ex += x[i] * p[i];
+//     }
+
+//     printf("Expected Value = %.2f", ex);
+
+//     return 0;
+// }
+
+
+//conditional 
+
 #include <stdio.h>
 
 int main() {
-    int n, i;
-    float x[50], p[50], ex = 0;
+    float pab, pb;
 
-    scanf("%d", &n);
+    scanf("%f %f", &pab, &pb);
 
-    for(i = 0; i < n; i++) {
-        scanf("%f %f", &x[i], &p[i]);
-        ex += x[i] * p[i];
-    }
+    float result = pab / pb;
 
-    printf("Expected Value = %.2f", ex);
+    printf("Conditional Probability = %.2f", result);
 
     return 0;
 }
