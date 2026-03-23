@@ -2908,16 +2908,44 @@ int main() {
 
 //conditional 
 
+// #include <stdio.h>
+
+// int main() {
+//     float pab, pb;
+
+//     scanf("%f %f", &pab, &pb);
+
+//     float result = pab / pb;
+
+//     printf("Conditional Probability = %.2f", result);
+
+//     return 0;
+// }
+
+
+//
+
 #include <stdio.h>
+#include <math.h>
+
+int fact(int n) {
+    int i, f = 1;
+    for(i = 1; i <= n; i++)
+        f *= i;
+    return f;
+}
 
 int main() {
-    float pab, pb;
+    int n, x;
+    float p;
 
-    scanf("%f %f", &pab, &pb);
+    scanf("%d %d %f", &n, &x, &p);
 
-    float result = pab / pb;
+    float ncr = fact(n) / (fact(x) * fact(n - x));
 
-    printf("Conditional Probability = %.2f", result);
+    float result = ncr * pow(p, x) * pow(1 - p, n - x);
+
+    printf("Probability = %.4f", result);
 
     return 0;
 }
