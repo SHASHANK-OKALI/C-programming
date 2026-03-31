@@ -2925,8 +2925,36 @@ int main() {
 
 //
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int fact(int n) {
+//     int i, f = 1;
+//     for(i = 1; i <= n; i++)
+//         f *= i;
+//     return f;
+// }
+
+// int main() {
+//     int n, x;
+//     float p;
+
+//     scanf("%d %d %f", &n, &x, &p);
+
+//     float ncr = fact(n) / (fact(x) * fact(n - x));
+
+//     float result = ncr * pow(p, x) * pow(1 - p, n - x);
+
+//     printf("Probability = %.4f", result);
+
+//     return 0;
+// }
+
+
+
+//combination
+
 #include <stdio.h>
-#include <math.h>
 
 int fact(int n) {
     int i, f = 1;
@@ -2936,16 +2964,12 @@ int fact(int n) {
 }
 
 int main() {
-    int n, x;
-    float p;
+    int n, r;
+    scanf("%d %d", &n, &r);
 
-    scanf("%d %d %f", &n, &x, &p);
+    int ncr = fact(n) / (fact(r) * fact(n - r));
 
-    float ncr = fact(n) / (fact(x) * fact(n - x));
-
-    float result = ncr * pow(p, x) * pow(1 - p, n - x);
-
-    printf("Probability = %.4f", result);
+    printf("nCr = %d", ncr);
 
     return 0;
 }
