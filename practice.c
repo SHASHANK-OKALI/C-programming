@@ -2977,15 +2977,30 @@ int main() {
 
 //even or odd 
 
+// #include <stdio.h>
+
+// int main() {
+//     int total = 6;
+//     int even = 3;
+
+//     float prob = (float)even / total;
+
+//     printf("P(Even) = %.2f", prob);
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
-    int total = 6;
-    int even = 3;
+    srand(time(0));
 
-    float prob = (float)even / total;
+    int dice = rand() % 6 + 1;
 
-    printf("P(Even) = %.2f", prob);
+    printf("Dice = %d", dice);
 
     return 0;
 }
