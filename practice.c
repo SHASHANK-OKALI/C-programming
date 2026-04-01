@@ -2991,6 +2991,23 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <time.h>
+
+// int main() {
+//     srand(time(0));
+
+//     int dice = rand() % 6 + 1;
+
+//     printf("Dice = %d", dice);
+
+//     return 0;
+// }
+
+
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -2998,9 +3015,12 @@ int main() {
 int main() {
     srand(time(0));
 
-    int dice = rand() % 6 + 1;
+    int toss = rand() % 2;
 
-    printf("Dice = %d", dice);
+    if(toss == 0)
+        printf("Head");
+    else
+        printf("Tail");
 
     return 0;
 }
