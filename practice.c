@@ -3027,14 +3027,26 @@ int main() {
 
 //
 
+// #include <stdio.h>
+// int main() {
+//     int red, total;
+//     scanf("%d %d", &red, &total);
+
+//     float p = (float)red / total;
+
+//     printf("P(Red) = %.2f", p);
+//     return 0;
+// }
+
+
 #include <stdio.h>
 int main() {
-    int red, total;
-    scanf("%d %d", &red, &total);
+    int favorable = 1;  // only one number (e.g., 3)
+    int total = 6;
 
-    float p = (float)red / total;
+    float p = (float)favorable / total;
 
-    printf("P(Red) = %.2f", p);
+    printf("Probability = %.2f", p);
     return 0;
 }
 
