@@ -3008,22 +3008,36 @@ int main() {
 
 //
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <time.h>
+
+// int main() {
+//     srand(time(0));
+
+//     int toss = rand() % 2;
+
+//     if(toss == 0)
+//         printf("Head");
+//     else
+//         printf("Tail");
+
+//     return 0;
+// }
+
+//
+
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
 int main() {
-    srand(time(0));
+    int red, total;
+    scanf("%d %d", &red, &total);
 
-    int toss = rand() % 2;
+    float p = (float)red / total;
 
-    if(toss == 0)
-        printf("Head");
-    else
-        printf("Tail");
-
+    printf("P(Red) = %.2f", p);
     return 0;
 }
+
 
 
 
