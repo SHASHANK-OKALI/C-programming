@@ -3053,14 +3053,27 @@ int main() {
 
 //probability of drawing red ball
 
+// #include <stdio.h>
+// int main() {
+//     int red, total;
+//     scanf("%d %d", &red, &total);
+
+//     float p = (float)red / total;
+
+//     printf("P(Red) = %.2f", p);
+//     return 0;
+// }
+
+
+//probability of getting vowel
+
 #include <stdio.h>
 int main() {
-    int red, total;
-    scanf("%d %d", &red, &total);
+    int vowels = 5, total = 26;
 
-    float p = (float)red / total;
+    float p = (float)vowels / total;
 
-    printf("P(Red) = %.2f", p);
+    printf("P(Vowel) = %.2f", p);
     return 0;
 }
 
