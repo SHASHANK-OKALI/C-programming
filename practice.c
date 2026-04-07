@@ -3067,13 +3067,25 @@ int main() {
 
 //probability of getting vowel
 
+// #include <stdio.h>
+// int main() {
+//     int vowels = 5, total = 26;
+
+//     float p = (float)vowels / total;
+
+//     printf("P(Vowel) = %.2f", p);
+//     return 0;
+// }
+
+
+//
+
 #include <stdio.h>
 int main() {
-    int vowels = 5, total = 26;
+    float p;
+    scanf("%f", &p);
 
-    float p = (float)vowels / total;
-
-    printf("P(Vowel) = %.2f", p);
+    printf("Complement = %.2f", 1 - p);
     return 0;
 }
 
