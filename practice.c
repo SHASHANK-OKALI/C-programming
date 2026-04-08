@@ -3090,20 +3090,33 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[100], n, i, positive = 0;
+
+//     scanf("%d", &n);
+
+//     for(i = 0; i < n; i++) {
+//         scanf("%d", &a[i]);
+//         if(a[i] > 0)
+//             positive++;
+//     }
+
+//     printf("Probability = %.2f", (float)positive / n);
+//     return 0;
+// }
+
+
 #include <stdio.h>
 
 int main() {
-    int a[100], n, i, positive = 0;
+    int favorable;
+    int total = 52;
 
-    scanf("%d", &n);
+    scanf("%d", &favorable);
 
-    for(i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
-        if(a[i] > 0)
-            positive++;
-    }
-
-    printf("Probability = %.2f", (float)positive / n);
+    printf("Probability = %.2f", (float)favorable / total);
     return 0;
 }
 
