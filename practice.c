@@ -3080,12 +3080,30 @@ int main() {
 
 //
 
-#include <stdio.h>
-int main() {
-    float p;
-    scanf("%f", &p);
+// #include <stdio.h>
+// int main() {
+//     float p;
+//     scanf("%f", &p);
 
-    printf("Complement = %.2f", 1 - p);
+//     printf("Complement = %.2f", 1 - p);
+//     return 0;
+// }
+
+
+#include <stdio.h>
+
+int main() {
+    int a[100], n, i, positive = 0;
+
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+        if(a[i] > 0)
+            positive++;
+    }
+
+    printf("Probability = %.2f", (float)positive / n);
     return 0;
 }
 
