@@ -3122,15 +3122,31 @@ int main() {
 
 //
 
+// #include <stdio.h>
+
+// int main() {
+//     int favorable;
+//     int total = 52;
+
+//     scanf("%d", &favorable);
+
+//     printf("Probability = %.2f", (float)favorable / total);
+//     return 0;
+// }
+
+
+//
+
+
 #include <stdio.h>
 
 int main() {
-    int favorable;
-    int total = 52;
+    int success, trials;
 
-    scanf("%d", &favorable);
+    scanf("%d %d", &success, &trials);
 
-    printf("Probability = %.2f", (float)favorable / total);
+    printf("Probability = %.2f", (float)success / trials);
+
     return 0;
 }
 
