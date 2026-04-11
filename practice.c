@@ -3138,14 +3138,37 @@ int main() {
 //
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int success, trials;
+
+//     scanf("%d %d", &success, &trials);
+
+//     printf("Probability = %.2f", (float)success / trials);
+
+//     return 0;
+// }
+
+
+//
+
+
 #include <stdio.h>
 
+float f(float x) {
+    return x * x;   // Example: f(x) = x^2
+}
+
 int main() {
-    int success, trials;
+    float a, b, h, result;
 
-    scanf("%d %d", &success, &trials);
+    scanf("%f %f", &a, &b);
 
-    printf("Probability = %.2f", (float)success / trials);
+    h = b - a;
+    result = (h / 2) * (f(a) + f(b));
+
+    printf("Integral = %.2f", result);
 
     return 0;
 }
