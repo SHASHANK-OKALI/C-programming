@@ -3154,21 +3154,47 @@ int main() {
 //
 
 
+// #include <stdio.h>
+
+// float f(float x) {
+//     return x * x;   // Example: f(x) = x^2
+// }
+
+// int main() {
+//     float a, b, h, result;
+
+//     scanf("%f %f", &a, &b);
+
+//     h = b - a;
+//     result = (h / 2) * (f(a) + f(b));
+
+//     printf("Integral = %.2f", result);
+
+//     return 0;
+// }
+
+//
+
 #include <stdio.h>
 
 float f(float x) {
-    return x * x;   // Example: f(x) = x^2
+    return x * x;
 }
 
 int main() {
-    float a, b, h, result;
+    int n, i;
+    float a, b, h, sum = 0;
 
-    scanf("%f %f", &a, &b);
+    scanf("%f %f %d", &a, &b, &n);
 
-    h = b - a;
-    result = (h / 2) * (f(a) + f(b));
+    h = (b - a) / n;
 
-    printf("Integral = %.2f", result);
+    sum = f(a) + f(b);
+
+    for(i = 1; i < n; i++)
+        sum += 2 * f(a + i * h);
+
+    printf("Integral = %.2f", (h / 2) * sum);
 
     return 0;
 }
