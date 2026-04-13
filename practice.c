@@ -3227,16 +3227,39 @@ int main() {
 //
 
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main() {
+//     float a, b, result;
+
+//     scanf("%f %f", &a, &b);
+
+//     // ∫sin(x) dx = -cos(x)
+//     result = -cos(b) + cos(a);
+
+//     printf("Integral = %.2f", result);
+
+//     return 0;
+// }
+
+
+//simpson rule
+
 #include <stdio.h>
-#include <math.h>
+
+float f(float x) {
+    return x * x;
+}
 
 int main() {
-    float a, b, result;
+    float a, b, h, result;
 
     scanf("%f %f", &a, &b);
 
-    // ∫sin(x) dx = -cos(x)
-    result = -cos(b) + cos(a);
+    h = (b - a) / 2;
+
+    result = (h / 3) * (f(a) + 4*f(a + h) + f(b));
 
     printf("Integral = %.2f", result);
 
