@@ -3246,26 +3246,45 @@ int main() {
 
 //simpson rule
 
-#include <stdio.h>
+// #include <stdio.h>
 
-float f(float x) {
-    return x * x;
-}
+// float f(float x) {
+//     return x * x;
+// }
+
+// int main() {
+//     float a, b, h, result;
+
+//     scanf("%f %f", &a, &b);
+
+//     h = (b - a) / 2;
+
+//     result = (h / 3) * (f(a) + 4*f(a + h) + f(b));
+
+//     printf("Integral = %.2f", result);
+
+//     return 0;
+// }
+
+
+
+//Integration of sin(x)
+
+#include <stdio.h>
+#include <math.h>
 
 int main() {
-    float a, b, h, result;
+    float a, b, result;
 
     scanf("%f %f", &a, &b);
 
-    h = (b - a) / 2;
-
-    result = (h / 3) * (f(a) + 4*f(a + h) + f(b));
+    // ∫sin(x) dx = -cos(x)
+    result = -cos(b) + cos(a);
 
     printf("Integral = %.2f", result);
 
     return 0;
 }
-
 
 
 
