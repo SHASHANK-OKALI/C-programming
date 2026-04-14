@@ -3270,6 +3270,23 @@ int main() {
 
 //Integration of sin(x)
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main() {
+//     float a, b, result;
+
+//     scanf("%f %f", &a, &b);
+
+//     // ∫sin(x) dx = -cos(x)
+//     result = -cos(b) + cos(a);
+
+//     printf("Integral = %.2f", result);
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
 #include <math.h>
 
