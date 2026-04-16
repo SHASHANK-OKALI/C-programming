@@ -3287,6 +3287,24 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main() {
+//     float a, b, result;
+
+//     scanf("%f %f", &a, &b);
+
+//     // ∫sin(x) dx = -cos(x)
+//     result = -cos(b) + cos(a);
+
+//     printf("Integral = %.2f", result);
+
+//     return 0;
+// }
+
+//
+
 #include <stdio.h>
 #include <math.h>
 
@@ -3295,8 +3313,8 @@ int main() {
 
     scanf("%f %f", &a, &b);
 
-    // ∫sin(x) dx = -cos(x)
-    result = -cos(b) + cos(a);
+    // ∫e^x dx = e^x
+    result = exp(b) - exp(a);
 
     printf("Integral = %.2f", result);
 
