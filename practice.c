@@ -3349,18 +3349,40 @@ int main() {
 
 //
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main() {
+//     float a, b;
+
+//     scanf("%f %f", &a, &b);
+
+//     // ∫x^2 dx = x^3 / 3
+//     float result = (pow(b,3)/3) - (pow(a,3)/3);
+
+//     printf("Integral = %.2f", result);
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    float a, b;
+    int a[10][10], i, j, r, c;
 
-    scanf("%f %f", &a, &b);
+    scanf("%d %d", &r, &c);
 
-    // ∫x^2 dx = x^3 / 3
-    float result = (pow(b,3)/3) - (pow(a,3)/3);
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+            scanf("%d",&a[i][j]);
 
-    printf("Integral = %.2f", result);
+    printf("Transpose:\n");
+    for(i=0;i<c;i++) {
+        for(j=0;j<r;j++)
+            printf("%d ",a[j][i]);
+        printf("\n");
+    }
 
     return 0;
 }
