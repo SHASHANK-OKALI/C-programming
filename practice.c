@@ -3366,23 +3366,54 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[10][10], i, j, r, c;
+
+//     scanf("%d %d", &r, &c);
+
+//     for(i=0;i<r;i++)
+//         for(j=0;j<c;j++)
+//             scanf("%d",&a[i][j]);
+
+//     printf("Transpose:\n");
+//     for(i=0;i<c;i++) {
+//         for(j=0;j<r;j++)
+//             printf("%d ",a[j][i]);
+//         printf("\n");
+//     }
+
+//     return 0;
+// }
+
+
+//
+
 #include <stdio.h>
 
 int main() {
-    int a[10][10], i, j, r, c;
+    int a[10][10], n, i, j, flag=1;
 
-    scanf("%d %d", &r, &c);
+    scanf("%d", &n);
 
-    for(i=0;i<r;i++)
-        for(j=0;j<c;j++)
+    for(i=0;i<n;i++)
+        for(j=0;j<n;j++)
             scanf("%d",&a[i][j]);
 
-    printf("Transpose:\n");
-    for(i=0;i<c;i++) {
-        for(j=0;j<r;j++)
-            printf("%d ",a[j][i]);
-        printf("\n");
+    for(i=0;i<n;i++) {
+        for(j=0;j<n;j++) {
+            if(i==j && a[i][j]!=1)
+                flag=0;
+            if(i!=j && a[i][j]!=0)
+                flag=0;
+        }
     }
+
+    if(flag)
+        printf("Identity Matrix");
+    else
+        printf("Not Identity");
 
     return 0;
 }
