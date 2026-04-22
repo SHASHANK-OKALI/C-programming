@@ -3390,50 +3390,69 @@ int main() {
 
 //
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[10][10], n, i, j, flag=1;
+
+//     scanf("%d", &n);
+
+//     for(i=0;i<n;i++)
+//         for(j=0;j<n;j++)
+//             scanf("%d",&a[i][j]);
+
+//     for(i=0;i<n;i++) {
+//         for(j=0;j<n;j++) {
+//             if(i==j && a[i][j]!=1)
+//                 flag=0;
+//             if(i!=j && a[i][j]!=0)
+//                 flag=0;
+//         }
+//     }
+
+//     if(flag)
+//         printf("Identity Matrix");
+//     else
+//         printf("Not Identity");
+
+//     return 0;
+// }
+
+
+// #include <stdio.h>
+
+// int main() {
+//     int a[10][10], n, i, j, sum=0;
+
+//     scanf("%d", &n);
+
+//     for(i=0;i<n;i++)
+//         for(j=0;j<n;j++)
+//             scanf("%d",&a[i][j]);
+
+//     for(i=0;i<n;i++)
+//         sum += a[i][i];
+
+//     printf("Sum = %d", sum);
+
+//     return 0;
+// }
+
+
+//
+
 #include <stdio.h>
+#include <math.h>
 
 int main() {
-    int a[10][10], n, i, j, flag=1;
+    float a, b, result;
 
-    scanf("%d", &n);
+    scanf("%f %f", &a, &b);
 
-    for(i=0;i<n;i++)
-        for(j=0;j<n;j++)
-            scanf("%d",&a[i][j]);
+    // ∫log(x) dx = xlog(x) - x
+    result = (b*log(b) - b) - (a*log(a) - a);
 
-    for(i=0;i<n;i++) {
-        for(j=0;j<n;j++) {
-            if(i==j && a[i][j]!=1)
-                flag=0;
-            if(i!=j && a[i][j]!=0)
-                flag=0;
-        }
-    }
-
-    if(flag)
-        printf("Identity Matrix");
-    else
-        printf("Not Identity");
-
-    return 0;
-}
-
-
-#include <stdio.h>
-
-int main() {
-    int a[10][10], n, i, j, sum=0;
-
-    scanf("%d", &n);
-
-    for(i=0;i<n;i++)
-        for(j=0;j<n;j++)
-            scanf("%d",&a[i][j]);
-
-    for(i=0;i<n;i++)
-        sum += a[i][i];
-
-    printf("Sum = %d", sum);
+    printf("Integral = %.2f", result);
 
     return 0;
 }
