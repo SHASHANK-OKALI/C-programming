@@ -3441,18 +3441,40 @@ int main() {
 
 //
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main() {
+//     float a, b, result;
+
+//     scanf("%f %f", &a, &b);
+
+//     // ∫log(x) dx = xlog(x) - x
+//     result = (b*log(b) - b) - (a*log(a) - a);
+
+//     printf("Integral = %.2f", result);
+
+//     return 0;
+// }
+
 #include <stdio.h>
-#include <math.h>
+
+float f(float x) {
+    return x * x;
+}
 
 int main() {
-    float a, b, result;
+    int n, i;
+    float a, b, h, sum = 0;
 
-    scanf("%f %f", &a, &b);
+    scanf("%f %f %d", &a, &b, &n);
 
-    // ∫log(x) dx = xlog(x) - x
-    result = (b*log(b) - b) - (a*log(a) - a);
+    h = (b - a) / n;
 
-    printf("Integral = %.2f", result);
+    for(i = 1; i <= n; i++)
+        sum += f(a + i*h);
+
+    printf("Integral = %.2f", sum * h);
 
     return 0;
 }
