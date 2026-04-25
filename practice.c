@@ -3503,6 +3503,22 @@ int main() {
     return 0;
 }
 
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, b, result;
+
+    scanf("%f %f", &a, &b);
+
+    // ∫cos(x) dx = sin(x)
+    result = sin(b) - sin(a);
+
+    printf("Integral = %.2f", result);
+
+    return 0;
+}
+
 
 
 
