@@ -3480,28 +3480,46 @@ int main() {
 // }
 
 
-#include <stdio.h>
+// #include <stdio.h>
 
-float f(float x) {
-    return x * x;
-}
+// float f(float x) {
+//     return x * x;
+// }
 
-int main() {
-    int n, i;
-    float a, b, h, sum = 0;
+// int main() {
+//     int n, i;
+//     float a, b, h, sum = 0;
 
-    scanf("%f %f %d", &a, &b, &n);
+//     scanf("%f %f %d", &a, &b, &n);
 
-    h = (b - a) / n;
+//     h = (b - a) / n;
 
-    for(i = 0; i < n; i++) {
-        sum += f(a + i*h);
-    }
+//     for(i = 0; i < n; i++) {
+//         sum += f(a + i*h);
+//     }
 
-    printf("Integral = %.2f", sum * h);
+//     printf("Integral = %.2f", sum * h);
 
-    return 0;
-}
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <math.h>
+
+// int main() {
+//     float a, b, result;
+
+//     scanf("%f %f", &a, &b);
+
+//     // ∫cos(x) dx = sin(x)
+//     result = sin(b) - sin(a);
+
+//     printf("Integral = %.2f", result);
+
+//     return 0;
+// }
+
+//
 
 #include <stdio.h>
 #include <math.h>
@@ -3511,8 +3529,8 @@ int main() {
 
     scanf("%f %f", &a, &b);
 
-    // ∫cos(x) dx = sin(x)
-    result = sin(b) - sin(a);
+    // ∫1/x dx = ln(x)
+    result = log(b) - log(a);
 
     printf("Integral = %.2f", result);
 
