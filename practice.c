@@ -3540,6 +3540,30 @@ int main() {
 
 //
 
+// #include <stdio.h>
+
+// float f(float x) {
+//     return x * x;
+// }
+
+// int main() {
+//     int n, i;
+//     float a, b, h, sum = 0;
+
+//     scanf("%f %f %d", &a, &b, &n);
+
+//     h = (b - a) / n;
+
+//     for(i = 0; i < n; i++) {
+//         sum += f(a + i*h);
+//     }
+
+//     printf("Integral = %.2f", sum * h);
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
 
 float f(float x) {
@@ -3547,18 +3571,15 @@ float f(float x) {
 }
 
 int main() {
-    int n, i;
-    float a, b, h, sum = 0;
+    float a, b, mid, result;
 
-    scanf("%f %f %d", &a, &b, &n);
+    scanf("%f %f", &a, &b);
 
-    h = (b - a) / n;
+    mid = (a + b) / 2;
 
-    for(i = 0; i < n; i++) {
-        sum += f(a + i*h);
-    }
+    result = (b - a) * f(mid);
 
-    printf("Integral = %.2f", sum * h);
+    printf("Integral = %.2f", result);
 
     return 0;
 }
