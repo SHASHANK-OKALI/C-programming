@@ -3564,22 +3564,47 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+
+// float f(float x) {
+//     return x * x;
+// }
+
+// int main() {
+//     float a, b, mid, result;
+
+//     scanf("%f %f", &a, &b);
+
+//     mid = (a + b) / 2;
+
+//     result = (b - a) * f(mid);
+
+//     printf("Integral = %.2f", result);
+
+//     return 0;
+// }
+
+
+//
+
 #include <stdio.h>
 
-float f(float x) {
-    return x * x;
-}
-
 int main() {
-    float a, b, mid, result;
+    int a[10][10], r, c, i, j, k;
 
-    scanf("%f %f", &a, &b);
+    scanf("%d %d", &r, &c);
 
-    mid = (a + b) / 2;
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+            scanf("%d",&a[i][j]);
 
-    result = (b - a) * f(mid);
+    scanf("%d", &k);
 
-    printf("Integral = %.2f", result);
+    for(i=0;i<r;i++) {
+        for(j=0;j<c;j++)
+            printf("%d ", a[i][j] * k);
+        printf("\n");
+    }
 
     return 0;
 }
