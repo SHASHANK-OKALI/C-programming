@@ -3661,26 +3661,48 @@ int main() {
 
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[10][10], n, i, j, flag = 1;
+
+//     scanf("%d", &n);
+
+//     for(i=0;i<n;i++)
+//         for(j=0;j<n;j++)
+//             scanf("%d",&a[i][j]);
+
+//     for(i=0;i<n;i++)
+//         for(j=i+1;j<n;j++)
+//             if(a[i][j] != 0)
+//                 flag = 0;
+
+//     if(flag)
+//         printf("Lower Triangular");
+//     else
+//         printf("Not Lower Triangular");
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main() {
-    int a[10][10], n, i, j, flag = 1;
+    int a[10][10], r, c, i, j, k;
 
-    scanf("%d", &n);
+    scanf("%d %d", &r, &c);
 
-    for(i=0;i<n;i++)
-        for(j=0;j<n;j++)
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
             scanf("%d",&a[i][j]);
 
-    for(i=0;i<n;i++)
-        for(j=i+1;j<n;j++)
-            if(a[i][j] != 0)
-                flag = 0;
+    scanf("%d", &k);
 
-    if(flag)
-        printf("Lower Triangular");
-    else
-        printf("Not Lower Triangular");
+    for(i=0;i<r;i++) {
+        for(j=0;j<c;j++)
+            printf("%d ", a[i][j] * k);
+        printf("\n");
+    }
 
     return 0;
 }
