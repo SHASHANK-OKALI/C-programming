@@ -3685,24 +3685,40 @@ int main() {
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[10][10], r, c, i, j, k;
+
+//     scanf("%d %d", &r, &c);
+
+//     for(i=0;i<r;i++)
+//         for(j=0;j<c;j++)
+//             scanf("%d",&a[i][j]);
+
+//     scanf("%d", &k);
+
+//     for(i=0;i<r;i++) {
+//         for(j=0;j<c;j++)
+//             printf("%d ", a[i][j] * k);
+//         printf("\n");
+//     }
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main() {
-    int a[10][10], r, c, i, j, k;
+    int a[2][2], det;
 
-    scanf("%d %d", &r, &c);
+    for(int i = 0; i < 2; i++)
+        for(int j = 0; j < 2; j++)
+            scanf("%d", &a[i][j]);
 
-    for(i=0;i<r;i++)
-        for(j=0;j<c;j++)
-            scanf("%d",&a[i][j]);
+    det = a[0][0]*a[1][1] - a[0][1]*a[1][0];
 
-    scanf("%d", &k);
-
-    for(i=0;i<r;i++) {
-        for(j=0;j<c;j++)
-            printf("%d ", a[i][j] * k);
-        printf("\n");
-    }
+    printf("Determinant = %d", det);
 
     return 0;
 }
