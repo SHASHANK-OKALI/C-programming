@@ -3744,62 +3744,91 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[3][3], det;
+
+//     for(int i = 0; i < 3; i++)
+//         for(int j = 0; j < 3; j++)
+//             scanf("%d", &a[i][j]);
+
+//     det = a[0][0]*(a[1][1]*a[2][2] - a[1][2]*a[2][1])
+//         - a[0][1]*(a[1][0]*a[2][2] - a[1][2]*a[2][0])
+//         + a[0][2]*(a[1][0]*a[2][1] - a[1][1]*a[2][0]);
+
+//     printf("Determinant = %d", det);
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main() {
+//     int a[3][3], det;
+
+//     for(int i = 0; i < 3; i++)
+//         for(int j = 0; j < 3; j++)
+//             scanf("%d", &a[i][j]);
+
+//     det = a[0][0]*(a[1][1]*a[2][2] - a[1][2]*a[2][1])
+//         - a[0][1]*(a[1][0]*a[2][2] - a[1][2]*a[2][0])
+//         + a[0][2]*(a[1][0]*a[2][1] - a[1][1]*a[2][0]);
+
+//     printf("Determinant = %d", det);
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main() {
+//     int a[10][10], n, i, j, flag = 1;
+
+//     scanf("%d", &n);
+
+//     for(i=0;i<n;i++)
+//         for(j=0;j<n;j++)
+//             scanf("%d",&a[i][j]);
+
+//     for(i=1;i<n;i++)
+//         for(j=0;j<i;j++)
+//             if(a[i][j] != 0)
+//                 flag = 0;
+
+//     if(flag)
+//         printf("Upper Triangular");
+//     else
+//         printf("Not Upper Triangular");
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
 
 int main() {
-    int a[3][3], det;
+    int cost[3][3] = {
+        {2, 3, 1},
+        {5, 4, 8},
+        {5, 6, 8}
+    };
 
-    for(int i = 0; i < 3; i++)
-        for(int j = 0; j < 3; j++)
-            scanf("%d", &a[i][j]);
+    int alloc[3][3] = {
+        {10, 0, 10},
+        {0, 20, 0},
+        {0, 0, 20}
+    };
 
-    det = a[0][0]*(a[1][1]*a[2][2] - a[1][2]*a[2][1])
-        - a[0][1]*(a[1][0]*a[2][2] - a[1][2]*a[2][0])
-        + a[0][2]*(a[1][0]*a[2][1] - a[1][1]*a[2][0]);
+    int total = 0, i, j;
 
-    printf("Determinant = %d", det);
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 3; j++) {
+            total += cost[i][j] * alloc[i][j];
+        }
+    }
 
-    return 0;
-}
-
-#include <stdio.h>
-
-int main() {
-    int a[3][3], det;
-
-    for(int i = 0; i < 3; i++)
-        for(int j = 0; j < 3; j++)
-            scanf("%d", &a[i][j]);
-
-    det = a[0][0]*(a[1][1]*a[2][2] - a[1][2]*a[2][1])
-        - a[0][1]*(a[1][0]*a[2][2] - a[1][2]*a[2][0])
-        + a[0][2]*(a[1][0]*a[2][1] - a[1][1]*a[2][0]);
-
-    printf("Determinant = %d", det);
-
-    return 0;
-}
-
-#include <stdio.h>
-
-int main() {
-    int a[10][10], n, i, j, flag = 1;
-
-    scanf("%d", &n);
-
-    for(i=0;i<n;i++)
-        for(j=0;j<n;j++)
-            scanf("%d",&a[i][j]);
-
-    for(i=1;i<n;i++)
-        for(j=0;j<i;j++)
-            if(a[i][j] != 0)
-                flag = 0;
-
-    if(flag)
-        printf("Upper Triangular");
-    else
-        printf("Not Upper Triangular");
+    printf("Total Transportation Cost = %d", total);
 
     return 0;
 }
