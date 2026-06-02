@@ -3805,30 +3805,56 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int cost[3][3] = {
+//         {2, 3, 1},
+//         {5, 4, 8},
+//         {5, 6, 8}
+//     };
+
+//     int alloc[3][3] = {
+//         {10, 0, 10},
+//         {0, 20, 0},
+//         {0, 0, 20}
+//     };
+
+//     int total = 0, i, j;
+
+//     for(i = 0; i < 3; i++) {
+//         for(j = 0; j < 3; j++) {
+//             total += cost[i][j] * alloc[i][j];
+//         }
+//     }
+
+//     printf("Total Transportation Cost = %d", total);
+
+//     return 0;
+// }
+
+
+//
+
 #include <stdio.h>
 
 int main() {
-    int cost[3][3] = {
-        {2, 3, 1},
-        {5, 4, 8},
-        {5, 6, 8}
-    };
+    int supply[2] = {20, 30};
+    int demand[2] = {10, 40};
 
-    int alloc[3][3] = {
-        {10, 0, 10},
-        {0, 20, 0},
-        {0, 0, 20}
-    };
+    int allocation[2][2] = {0};
 
-    int total = 0, i, j;
+    allocation[0][0] = 10;
+    allocation[0][1] = 10;
+    allocation[1][1] = 30;
 
-    for(i = 0; i < 3; i++) {
-        for(j = 0; j < 3; j++) {
-            total += cost[i][j] * alloc[i][j];
-        }
+    printf("Allocation Matrix:\n");
+
+    for(int i=0;i<2;i++) {
+        for(int j=0;j<2;j++)
+            printf("%d ", allocation[i][j]);
+        printf("\n");
     }
-
-    printf("Total Transportation Cost = %d", total);
 
     return 0;
 }
