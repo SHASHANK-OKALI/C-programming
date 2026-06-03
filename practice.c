@@ -3836,29 +3836,52 @@ int main() {
 
 //
 
+// #include <stdio.h>
+
+// int main() {
+//     int supply[2] = {20, 30};
+//     int demand[2] = {10, 40};
+
+//     int allocation[2][2] = {0};
+
+//     allocation[0][0] = 10;
+//     allocation[0][1] = 10;
+//     allocation[1][1] = 30;
+
+//     printf("Allocation Matrix:\n");
+
+//     for(int i=0;i<2;i++) {
+//         for(int j=0;j<2;j++)
+//             printf("%d ", allocation[i][j]);
+//         printf("\n");
+//     }
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
 
 int main() {
-    int supply[2] = {20, 30};
-    int demand[2] = {10, 40};
+    int cost[2][2], alloc[2][2];
+    int i, j, total = 0;
 
-    int allocation[2][2] = {0};
+    for(i = 0; i < 2; i++)
+        for(j = 0; j < 2; j++)
+            scanf("%d", &cost[i][j]);
 
-    allocation[0][0] = 10;
-    allocation[0][1] = 10;
-    allocation[1][1] = 30;
+    for(i = 0; i < 2; i++)
+        for(j = 0; j < 2; j++)
+            scanf("%d", &alloc[i][j]);
 
-    printf("Allocation Matrix:\n");
+    for(i = 0; i < 2; i++)
+        for(j = 0; j < 2; j++)
+            total += cost[i][j] * alloc[i][j];
 
-    for(int i=0;i<2;i++) {
-        for(int j=0;j<2;j++)
-            printf("%d ", allocation[i][j]);
-        printf("\n");
-    }
+    printf("Total Cost = %d", total);
 
     return 0;
 }
-
 
 
 
