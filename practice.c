@@ -3860,25 +3860,37 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int cost[2][2], alloc[2][2];
+//     int i, j, total = 0;
+
+//     for(i = 0; i < 2; i++)
+//         for(j = 0; j < 2; j++)
+//             scanf("%d", &cost[i][j]);
+
+//     for(i = 0; i < 2; i++)
+//         for(j = 0; j < 2; j++)
+//             scanf("%d", &alloc[i][j]);
+
+//     for(i = 0; i < 2; i++)
+//         for(j = 0; j < 2; j++)
+//             total += cost[i][j] * alloc[i][j];
+
+//     printf("Total Cost = %d", total);
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main() {
-    int cost[2][2], alloc[2][2];
-    int i, j, total = 0;
+    int cost = 8, u = 3, v = 2;
 
-    for(i = 0; i < 2; i++)
-        for(j = 0; j < 2; j++)
-            scanf("%d", &cost[i][j]);
+    int delta = cost - (u + v);
 
-    for(i = 0; i < 2; i++)
-        for(j = 0; j < 2; j++)
-            scanf("%d", &alloc[i][j]);
-
-    for(i = 0; i < 2; i++)
-        for(j = 0; j < 2; j++)
-            total += cost[i][j] * alloc[i][j];
-
-    printf("Total Cost = %d", total);
+    printf("Opportunity Cost = %d", delta);
 
     return 0;
 }
