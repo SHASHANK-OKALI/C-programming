@@ -3883,14 +3883,33 @@ int main() {
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main() {
+//     int cost = 8, u = 3, v = 2;
+
+//     int delta = cost - (u + v);
+
+//     printf("Opportunity Cost = %d", delta);
+
+//     return 0;
+// }
+
+
+//
+
 #include <stdio.h>
 
 int main() {
-    int cost = 8, u = 3, v = 2;
+    int cost[3][3] = {
+        {9, 2, 7},
+        {6, 4, 3},
+        {5, 8, 1}
+    };
 
-    int delta = cost - (u + v);
+    int total = cost[0][1] + cost[1][0] + cost[2][2];
 
-    printf("Opportunity Cost = %d", delta);
+    printf("Total Cost = %d", total);
 
     return 0;
 }
