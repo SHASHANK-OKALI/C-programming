@@ -3898,18 +3898,49 @@ int main() {
 
 //
 
+// #include <stdio.h>
+
+// int main() {
+//     int cost[3][3] = {
+//         {9, 2, 7},
+//         {6, 4, 3},
+//         {5, 8, 1}
+//     };
+
+//     int total = cost[0][1] + cost[1][0] + cost[2][2];
+
+//     printf("Total Cost = %d", total);
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main() {
-    int cost[3][3] = {
-        {9, 2, 7},
-        {6, 4, 3},
-        {5, 8, 1}
-    };
+    int a[2][2], i, j, min;
 
-    int total = cost[0][1] + cost[1][0] + cost[2][2];
+    for(i = 0; i < 2; i++)
+        for(j = 0; j < 2; j++)
+            scanf("%d", &a[i][j]);
 
-    printf("Total Cost = %d", total);
+    for(j = 0; j < 2; j++) {
+        min = a[0][j];
+
+        for(i = 1; i < 2; i++)
+            if(a[i][j] < min)
+                min = a[i][j];
+
+        for(i = 0; i < 2; i++)
+            a[i][j] -= min;
+    }
+
+    printf("Column Reduced Matrix:\n");
+
+    for(i = 0; i < 2; i++) {
+        for(j = 0; j < 2; j++)
+            printf("%d ", a[i][j]);
+        printf("\n");
+    }
 
     return 0;
 }
