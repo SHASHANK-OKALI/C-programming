@@ -3914,33 +3914,50 @@ int main() {
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[2][2], i, j, min;
+
+//     for(i = 0; i < 2; i++)
+//         for(j = 0; j < 2; j++)
+//             scanf("%d", &a[i][j]);
+
+//     for(j = 0; j < 2; j++) {
+//         min = a[0][j];
+
+//         for(i = 1; i < 2; i++)
+//             if(a[i][j] < min)
+//                 min = a[i][j];
+
+//         for(i = 0; i < 2; i++)
+//             a[i][j] -= min;
+//     }
+
+//     printf("Column Reduced Matrix:\n");
+
+//     for(i = 0; i < 2; i++) {
+//         for(j = 0; j < 2; j++)
+//             printf("%d ", a[i][j]);
+//         printf("\n");
+//     }
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
 
 int main() {
-    int a[2][2], i, j, min;
+    int m, n, allocations;
 
-    for(i = 0; i < 2; i++)
-        for(j = 0; j < 2; j++)
-            scanf("%d", &a[i][j]);
+    scanf("%d %d", &m, &n);
+    scanf("%d", &allocations);
 
-    for(j = 0; j < 2; j++) {
-        min = a[0][j];
-
-        for(i = 1; i < 2; i++)
-            if(a[i][j] < min)
-                min = a[i][j];
-
-        for(i = 0; i < 2; i++)
-            a[i][j] -= min;
-    }
-
-    printf("Column Reduced Matrix:\n");
-
-    for(i = 0; i < 2; i++) {
-        for(j = 0; j < 2; j++)
-            printf("%d ", a[i][j]);
-        printf("\n");
-    }
+    if(allocations == m + n - 1)
+        printf("Non-Degenerate Solution");
+    else
+        printf("Degenerate Solution");
 
     return 0;
 }
