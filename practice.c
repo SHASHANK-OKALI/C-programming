@@ -3946,18 +3946,40 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int m, n, allocations;
+
+//     scanf("%d %d", &m, &n);
+//     scanf("%d", &allocations);
+
+//     if(allocations == m + n - 1)
+//         printf("Non-Degenerate Solution");
+//     else
+//         printf("Degenerate Solution");
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
 
 int main() {
-    int m, n, allocations;
+    int a[3][3], min, i, j;
 
-    scanf("%d %d", &m, &n);
-    scanf("%d", &allocations);
+    for(i = 0; i < 3; i++)
+        for(j = 0; j < 3; j++)
+            scanf("%d", &a[i][j]);
 
-    if(allocations == m + n - 1)
-        printf("Non-Degenerate Solution");
-    else
-        printf("Degenerate Solution");
+    min = a[0][0];
+
+    for(i = 0; i < 3; i++)
+        for(j = 0; j < 3; j++)
+            if(a[i][j] < min)
+                min = a[i][j];
+
+    printf("Minimum Cost = %d", min);
 
     return 0;
 }
