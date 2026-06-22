@@ -3963,45 +3963,77 @@ int main() {
 // }
 
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[3][3], min, i, j;
+
+//     for(i = 0; i < 3; i++)
+//         for(j = 0; j < 3; j++)
+//             scanf("%d", &a[i][j]);
+
+//     min = a[0][0];
+
+//     for(i = 0; i < 3; i++)
+//         for(j = 0; j < 3; j++)
+//             if(a[i][j] < min)
+//                 min = a[i][j];
+
+//     printf("Minimum Cost = %d", min);
+
+//     return 0;
+// }
+
+
+// #include <stdio.h>
+
+// int main() {
+//     int a[3][3], min, i, j;
+
+//     for(i = 0; i < 3; i++)
+//         for(j = 0; j < 3; j++)
+//             scanf("%d", &a[i][j]);
+
+//     min = a[0][0];
+
+//     for(i = 0; i < 3; i++)
+//         for(j = 0; j < 3; j++)
+//             if(a[i][j] < min)
+//                 min = a[i][j];
+
+//     printf("Minimum Cost = %d", min);
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main() {
-    int a[3][3], min, i, j;
+    int a[3][3], i, j, min;
 
+    printf("Enter 3x3 matrix:\n");
     for(i = 0; i < 3; i++)
         for(j = 0; j < 3; j++)
             scanf("%d", &a[i][j]);
 
-    min = a[0][0];
+    for(i = 0; i < 3; i++) {
+        min = a[i][0];
 
-    for(i = 0; i < 3; i++)
-        for(j = 0; j < 3; j++)
+        for(j = 1; j < 3; j++)
             if(a[i][j] < min)
                 min = a[i][j];
 
-    printf("Minimum Cost = %d", min);
-
-    return 0;
-}
-
-
-#include <stdio.h>
-
-int main() {
-    int a[3][3], min, i, j;
-
-    for(i = 0; i < 3; i++)
         for(j = 0; j < 3; j++)
-            scanf("%d", &a[i][j]);
+            a[i][j] -= min;
+    }
 
-    min = a[0][0];
+    printf("Row Reduced Matrix:\n");
 
-    for(i = 0; i < 3; i++)
+    for(i = 0; i < 3; i++) {
         for(j = 0; j < 3; j++)
-            if(a[i][j] < min)
-                min = a[i][j];
-
-    printf("Minimum Cost = %d", min);
+            printf("%d ", a[i][j]);
+        printf("\n");
+    }
 
     return 0;
 }
