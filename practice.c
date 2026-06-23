@@ -4039,6 +4039,32 @@ int main() {
 }
 
 
+#include <stdio.h>
+
+int main() {
+    int cost[3][3], alloc[3][3];
+    int i, j, total = 0;
+
+    printf("Enter Cost Matrix (3x3):\n");
+    for(i = 0; i < 3; i++)
+        for(j = 0; j < 3; j++)
+            scanf("%d", &cost[i][j]);
+
+    printf("Enter Allocation Matrix (3x3):\n");
+    for(i = 0; i < 3; i++)
+        for(j = 0; j < 3; j++)
+            scanf("%d", &alloc[i][j]);
+
+    for(i = 0; i < 3; i++)
+        for(j = 0; j < 3; j++)
+            total += cost[i][j] * alloc[i][j];
+
+    printf("Total Transportation Cost = %d", total);
+
+    return 0;
+}
+
+
 
 
 
