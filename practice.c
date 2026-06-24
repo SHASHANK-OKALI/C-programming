@@ -4006,60 +4006,77 @@ int main() {
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main() {
+//     int a[3][3], i, j, min;
+
+//     printf("Enter 3x3 matrix:\n");
+//     for(i = 0; i < 3; i++)
+//         for(j = 0; j < 3; j++)
+//             scanf("%d", &a[i][j]);
+
+//     for(i = 0; i < 3; i++) {
+//         min = a[i][0];
+
+//         for(j = 1; j < 3; j++)
+//             if(a[i][j] < min)
+//                 min = a[i][j];
+
+//         for(j = 0; j < 3; j++)
+//             a[i][j] -= min;
+//     }
+
+//     printf("Row Reduced Matrix:\n");
+
+//     for(i = 0; i < 3; i++) {
+//         for(j = 0; j < 3; j++)
+//             printf("%d ", a[i][j]);
+//         printf("\n");
+//     }
+
+//     return 0;
+// }
+
+
+// #include <stdio.h>
+
+// int main() {
+//     int cost[3][3], alloc[3][3];
+//     int i, j, total = 0;
+
+//     printf("Enter Cost Matrix (3x3):\n");
+//     for(i = 0; i < 3; i++)
+//         for(j = 0; j < 3; j++)
+//             scanf("%d", &cost[i][j]);
+
+//     printf("Enter Allocation Matrix (3x3):\n");
+//     for(i = 0; i < 3; i++)
+//         for(j = 0; j < 3; j++)
+//             scanf("%d", &alloc[i][j]);
+
+//     for(i = 0; i < 3; i++)
+//         for(j = 0; j < 3; j++)
+//             total += cost[i][j] * alloc[i][j];
+
+//     printf("Total Transportation Cost = %d", total);
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main() {
-    int a[3][3], i, j, min;
+    int cost[2][2] = {{2, 3}, {1, 4}};
+    int supply[2] = {20, 30};
+    int demand[2] = {30, 20};
 
-    printf("Enter 3x3 matrix:\n");
-    for(i = 0; i < 3; i++)
-        for(j = 0; j < 3; j++)
-            scanf("%d", &a[i][j]);
+    int totalCost = 0;
 
-    for(i = 0; i < 3; i++) {
-        min = a[i][0];
+    // Allocations using Least Cost Method
+    totalCost = (20 * 1) + (10 * 2) + (20 * 3);
 
-        for(j = 1; j < 3; j++)
-            if(a[i][j] < min)
-                min = a[i][j];
-
-        for(j = 0; j < 3; j++)
-            a[i][j] -= min;
-    }
-
-    printf("Row Reduced Matrix:\n");
-
-    for(i = 0; i < 3; i++) {
-        for(j = 0; j < 3; j++)
-            printf("%d ", a[i][j]);
-        printf("\n");
-    }
-
-    return 0;
-}
-
-
-#include <stdio.h>
-
-int main() {
-    int cost[3][3], alloc[3][3];
-    int i, j, total = 0;
-
-    printf("Enter Cost Matrix (3x3):\n");
-    for(i = 0; i < 3; i++)
-        for(j = 0; j < 3; j++)
-            scanf("%d", &cost[i][j]);
-
-    printf("Enter Allocation Matrix (3x3):\n");
-    for(i = 0; i < 3; i++)
-        for(j = 0; j < 3; j++)
-            scanf("%d", &alloc[i][j]);
-
-    for(i = 0; i < 3; i++)
-        for(j = 0; j < 3; j++)
-            total += cost[i][j] * alloc[i][j];
-
-    printf("Total Transportation Cost = %d", total);
+    printf("Total Transportation Cost = %d", totalCost);
 
     return 0;
 }
