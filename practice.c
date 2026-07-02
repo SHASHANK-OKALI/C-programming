@@ -4064,19 +4064,51 @@ int main() {
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main() {
+//     int cost[2][2] = {{2, 3}, {1, 4}};
+//     int supply[2] = {20, 30};
+//     int demand[2] = {30, 20};
+
+//     int totalCost = 0;
+
+//     // Allocations using Least Cost Method
+//     totalCost = (20 * 1) + (10 * 2) + (20 * 3);
+
+//     printf("Total Transportation Cost = %d", totalCost);
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
 
 int main() {
-    int cost[2][2] = {{2, 3}, {1, 4}};
-    int supply[2] = {20, 30};
-    int demand[2] = {30, 20};
+    int a[3][3], i, j, min;
 
-    int totalCost = 0;
+    for(i = 0; i < 3; i++)
+        for(j = 0; j < 3; j++)
+            scanf("%d", &a[i][j]);
 
-    // Allocations using Least Cost Method
-    totalCost = (20 * 1) + (10 * 2) + (20 * 3);
+    for(j = 0; j < 3; j++) {
+        min = a[0][j];
 
-    printf("Total Transportation Cost = %d", totalCost);
+        for(i = 1; i < 3; i++)
+            if(a[i][j] < min)
+                min = a[i][j];
+
+        for(i = 0; i < 3; i++)
+            a[i][j] -= min;
+    }
+
+    printf("Column Reduced Matrix:\n");
+
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 3; j++)
+            printf("%d ", a[i][j]);
+        printf("\n");
+    }
 
     return 0;
 }
